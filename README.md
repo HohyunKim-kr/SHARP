@@ -1,0 +1,2 @@
+# SHARP
+SHARP 전자사전
