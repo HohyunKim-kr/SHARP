@@ -67,3 +67,15 @@ h2 {
 .login_sub input:hover {
   background: rgb(142, 165, 246);
 }
+
+button {
+  box-sizing: border-box;
+  padding: 10px 150px;
+  border-radius: 10px;
+  background: rgb(233, 180, 180);
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
