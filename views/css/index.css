@@ -5,16 +5,20 @@ body {
   background: rgb(254, 239, 203);
 }
 
-h1 {
+.title {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: rgb(248, 82, 53);
+  justify-content: space-between;
 }
+
 .btn {
   padding: 50px;
   display: flex;
   justify-content: end;
+  gap: 20px;
+}
+h1 {
+  padding: 5px auto;
+  color: rgb(248, 82, 53);
 }
 
 .btnUser {
