@@ -21,6 +21,10 @@ exports.getuserInfo = (req, res) => {
   res.render("board/getuserInfo.html");
 };
 
-exports.myView = (req, res) => {
+exports.getmyView = (req, res) => {
+  res.render("board/myView.html");
+};
+
+exports.postmyView = (req, res) => {
   res.render("board/myView.html");
 };
