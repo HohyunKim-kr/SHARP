@@ -10,5 +10,5 @@ router.get("/usereInfo", controller.getuserInfo);
 router.get("/myView", controller.getmyView);
 
 router.post("/login", controller.postLogin);
-router.post("/myView", controller.postmyView);
+
 module.exports = router;
