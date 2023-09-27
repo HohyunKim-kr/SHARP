@@ -1,3 +1,5 @@
+const boardService = require("./board.service");
+
 exports.getLogin = (req, res) => {
   res.render("board/login.html");
 };
@@ -22,9 +24,5 @@ exports.getuserInfo = (req, res) => {
 };
 
 exports.getmyView = (req, res) => {
-  res.render("board/myView.html");
-};
-
-exports.postmyView = (req, res) => {
   res.render("board/myView.html");
 };
