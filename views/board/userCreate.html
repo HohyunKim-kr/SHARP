@@ -7,20 +7,32 @@
     <link rel="stylesheet" href="/css/login.css" />
   </head>
   <body>
-    <div class="wrap">
-      <form method="post" action="/index.html" class="login">
-        <h1>SHARP</h1>
-        <h2>User Login</h2>
-        <div class="login_id">
-          <input type="email" placeholder="Email" id="myId" />
-        </div>
-        <div class="login_pw">
-          <input type="password" placeholder="Password" id="myPW" />
-        </div>
-        <div class="login_sub">
-          <input type="submit" value="submit" id="myLogin" />
-        </div>
-      </form>
+    <div id="container">
+      <div id="root">
+        <h2>회원가입</h2>
+        <form method="post" action="/boards/login">
+          <table>
+            <tr>
+              <th>* 이름</th>
+              <th><input type="text" /></th>
+              <th>* 별명</th>
+              <th><input type="text" /></th>
+            </tr>
+            <tr>
+              <td>* 이메일</td>
+              <td colspan="3"><input type="text" /></td>
+            </tr>
+            <tr>
+              <td>* 비밀번호</td>
+              <td colspan="3"><input type="password" /></td>
+            </tr>
+            <tr>
+              <td>* 생년월일</td>
+              <td colspan="3"><input type="text" /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
     </div>
   </body>
 </html>
