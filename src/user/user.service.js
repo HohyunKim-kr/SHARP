@@ -40,7 +40,7 @@ exports.postUsercreate = async (
   } catch (e) {}
 };
 
-exports.findOneByUserId = async (userid) => {
+exports.findOneByUserId = async (userEmail) => {
   try {
     const result = await userRepository.findOne("userEmail", userEmail);
     return result;
