@@ -11,7 +11,7 @@ exports.postLogin = async (userEmail, userPassword) => {
     console.log(result);
     if (!result) return { isLogin: false, data: null };
 
-    const token = jwt.createSinature({ id: result.userEmail }, "salt");
+    const token = jwt.sign({ id: result.userEmail });
     return { isLogin: true, data: token };
   } catch (e) {
     throw new Error("Service Error" + e.message);
