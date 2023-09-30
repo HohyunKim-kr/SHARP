@@ -1,10 +1,15 @@
 const boardService = require("./board.service");
 
-exports.getLogin = (req, res) => {
-  res.render("board/login.html");
+exports.getFront = (req, res) => {
+  res.render("board/front.html");
 };
-exports.postLogin = (req, res) => {
-  res.render("board/myView.html");
+
+exports.getBack = (req, res) => {
+  res.render("board/back.html");
+};
+
+exports.getBlockchain = (req, res) => {
+  res.render("board/blockchain.html");
 };
 
 exports.getCommentList = (req, res) => {
@@ -15,13 +20,13 @@ exports.getmywriteList = (req, res) => {
   res.render("board/mywriteList.html");
 };
 
-exports.getuserCreate = (req, res) => {
-  res.render("board/userCreate.html");
-};
+// exports.getuserCreate = (req, res) => {
+//   res.render("board/userCreate.html");
+// };
 
-exports.getuserInfo = (req, res) => {
-  res.render("board/getuserInfo.html");
-};
+// exports.getuserInfo = (req, res) => {
+//   res.render("board/getuserInfo.html");
+// };
 
 exports.getmyView = (req, res) => {
   res.render("board/myView.html");
