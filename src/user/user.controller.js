@@ -15,7 +15,6 @@ exports.getUsercreate = (req, res) => {
 
 exports.postLogin = async (req, res, next) => {
   try {
-    console.log("hi");
     const { userEmail, userPassword } = req.body;
     const result = await userService.postLogin(userEmail, userPassword);
     console.log(result);
