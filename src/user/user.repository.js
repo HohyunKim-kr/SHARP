@@ -13,7 +13,7 @@ exports.findOneByUserInfo = async (userEmail, userPassword) => {
 
 exports.findOne = async (field, value) => {
   try {
-    const sql = `select * from Users where ${field}=?`;
+    const sql = `select * from users where ${field}=?`;
     const [[result]] = await pool.query(sql, [value]);
     return result;
   } catch (e) {
