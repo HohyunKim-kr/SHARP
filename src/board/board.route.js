@@ -1,14 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("./board.controller");
+const boardcontroller = require("./board.controller");
 
-router.get("/login", controller.getLogin);
-router.get("/commentList", controller.getCommentList);
-router.get("/mywriteList", controller.getmywriteList);
-router.get("/userCreate", controller.getuserCreate);
-router.get("/usereInfo", controller.getuserInfo);
-router.get("/myView", controller.getmyView);
+// router.get("/login", controller.getLogin);
+router.get("/front", boardcontroller.getFront);
+router.get("/back", boardcontroller.getBack);
+router.get("/blockchain", boardcontroller.getBlockchain);
 
-router.post("/login", controller.postLogin);
+router.get("/commentList", boardcontroller.getCommentList);
+router.get("/mywriteList", boardcontroller.getmywriteList);
+// router.get("/userCreate", boardcontroller.getuserCreate);
+// router.get("/usereInfo", boardcontroller.getuserInfo);
+router.get("/myView", boardcontroller.getmyView);
+
+// router.post("/login", boardcontroller.postLogin);
 
 module.exports = router;
