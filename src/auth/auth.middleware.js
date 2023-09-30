@@ -10,7 +10,7 @@ exports.auth = async (req, res, next) => {
     const payload = jwt.verify(token, "web7722");
     console.log("payload: ", payload);
 
-    const user = await userService.findOneByUserId(payload.id);
+    const user = await userService.findOneByUserId(payload.userEmail);
     console.log(user);
     req.user = user;
     next();
