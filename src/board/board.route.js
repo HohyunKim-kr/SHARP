@@ -9,10 +9,8 @@ router.get("/blockchain", boardcontroller.getBlockchain);
 
 router.get("/commentList", boardcontroller.getCommentList);
 router.get("/mywriteList", boardcontroller.getmywriteList);
-// router.get("/userCreate", boardcontroller.getuserCreate);
-// router.get("/usereInfo", boardcontroller.getuserInfo);
-router.get("/myView", boardcontroller.getmyView);
+router.post("/mywriteList", boardcontroller.postmywriteList);
 
-// router.post("/login", boardcontroller.postLogin);
+router.get("/myView", boardcontroller.getmyView);
 
 module.exports = router;
