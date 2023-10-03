@@ -1,11 +1,12 @@
 const pool = require("../../pool");
 
-exports.findOneByUserInfo = async (userEmail, userPassword) => {
+exports.findOneByUserInfo = async (user_Email, user_Password) => {
   try {
-    const sql = `select * from users`;
-    // const sql = `select * from users where userEmail=? and userPassword=?`;
-    const [[result]] = await pool.query(sql);
-    //const [[result]] = await pool.query(sql, [userEmail, userPassword]);
+    // const sql = `select * from users`;
+    // const sql = "SELECT * FROM users where userEmail=? AND userPassword=?";
+    const sql = `SELECT userEmail,userPassword FROM users`;
+    // const [[result]] = await pool.query(sql);
+    const [[result]] = await pool.query(sql, [user_Email, user_Password]);
     console.log(result);
 
     return result;
@@ -16,7 +17,7 @@ exports.findOneByUserInfo = async (userEmail, userPassword) => {
 
 exports.findOne = async (field, value) => {
   try {
-    const sql = `select * from users where ${field}=?`;
+    const sql = `SELECT * FROM users WHERE ${field}=?`;
     const [[result]] = await pool.query(sql, [value]);
     return result;
   } catch (e) {
@@ -33,9 +34,9 @@ exports.createUserInfo = async (
   userNickname
 ) => {
   try {
-    const sql = `INSERT INTO users(userId,userEmail,userPassword,userName,userBirth,userNickname) values(1,"abc@naver.com","123","a","0210929","abc")`;
+    const sql = `INSERT INTO users(userId,userEmail,userPassword,userName,userBirth,userNickname) values(?,?,?,?,?,?)`;
     const [[result]] = await pool.query(sql, [
-      userId,
+      (userId = 2),
       userEmail,
       userPassword,
       userName,

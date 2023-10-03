@@ -4,20 +4,14 @@ exports.getLogin = (req, res) => {
   res.render("board/login.html");
 };
 
-exports.getLogout = (req, res) => {
-  res.clearCookie("token");
-  res.redirect("/");
-};
-
-exports.getUsercreate = (req, res) => {
-  res.render("board/userCreate.html");
-};
-
 exports.postLogin = async (req, res, next) => {
   try {
-    const { userEmail, userPassword } = req.body;
+    const userEmail = req.body.userEmail;
+    const userPassword = req.body.userPassword;
+
     const result = await userService.postLogin(userEmail, userPassword);
-    console.log(result);
+    // const { userEmail, userPassword } = req.body;
+    // const result = await userService.postLogin(userEmail, userPassword);
     if (!result.isLogin) return res.redirect("/");
 
     res.cookie(
@@ -31,6 +25,10 @@ exports.postLogin = async (req, res, next) => {
   } catch (e) {
     next();
   }
+};
+
+exports.getUsercreate = (req, res) => {
+  res.render("board/userCreate.html");
 };
 
 exports.postUsercreate = async (req, res, next) => {
@@ -56,4 +54,9 @@ exports.postUsercreate = async (req, res, next) => {
   } catch (e) {
     next();
   }
+};
+
+exports.getLogout = (req, res) => {
+  res.clearCookie("token");
+  res.redirect("/");
 };
