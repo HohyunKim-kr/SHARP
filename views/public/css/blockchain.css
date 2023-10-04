@@ -19,6 +19,9 @@ td {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background: #fff;
 }
+li a {
+  text-decoration: none;
+}
 
 #pageTitle {
   width: 100%;
@@ -153,7 +156,7 @@ thead tr th {
 #pageInfo {
   display: flex;
   flex-direction: row;
-  border: none;
+  border: 1px solid black;
   width: 100%;
   height: 100%;
 }
@@ -174,12 +177,13 @@ thead tr th {
   border: 1px solid black;
 }
 
-.whatsFront img {
+.whatsBlockchain img {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
   display: flex;
 }
+
 .comment {
   display: flex;
   flex-direction: column;
@@ -240,9 +244,6 @@ thead tr th {
   padding: 10px 14px 10px 14px;
   background: #fff;
   box-sizing: border-box;
-}
-
-.px_box {
   outline: none;
 }
 
@@ -259,19 +260,6 @@ thead tr th {
   box-sizing: border-box;
   z-index: 10;
 }
-.commentList {
-  width: 50px;
-  text-align: center;
-  box-sizing: border-box;
-  border-radius: 8px;
-  text-decoration: none;
-  border: none;
-  background: #333;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-}
-
 .commentBtn {
   width: 50px;
   text-align: center;
@@ -289,7 +277,7 @@ thead tr th {
   width: 500px;
 }
 
-.whatsFront {
+.whatsBlockchain {
   width: 100%;
 }
 
