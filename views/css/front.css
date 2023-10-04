@@ -12,6 +12,12 @@ h2 a {
 th,
 td {
   text-align: center;
+  padding: 1em 0;
+  vertical-align: middle;
+}
+td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
 #pageTitle {
@@ -40,13 +46,88 @@ td {
   background: rgb(242, 243, 232);
 }
 
+table {
+  border: 1px solid #a39485;
+  font-size: 0.9em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .commentTable button {
   display: flex;
   justify-content: flex-end;
   align-items: end;
 }
+
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.frame button {
+  margin: 20px;
+}
+
+.writeBtn {
+  width: 140px;
+  height: 40px;
+
+  border-radius: 5px;
+  padding: 15px 45px;
+
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  background: rgb(6, 14, 131);
+  background: linear-gradient(
+    0deg,
+    rgba(6, 14, 131, 1) 0%,
+    rgba(12, 25, 180, 1) 100%
+  );
+  border: none;
+}
+
+.writeBtn:hover {
+  background: rgb(0, 3, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 3, 255, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
+}
+
 .writeBtn a {
   text-decoration: none;
+  color: #fff;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+thead {
+  font-weight: bold;
+  color: #fff;
+  background: rgba(2, 126, 251, 1);
+}
+
+thead tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+thead tr th {
+  padding: 10px;
+  text-align: left;
 }
 
 .btnDev {
@@ -84,7 +165,7 @@ td {
 }
 
 #lnb {
-  width: 300px;
+  width: 600px;
   height: 100%;
   box-sizing: border-box;
   display: flex;
@@ -202,4 +283,23 @@ td {
   color: #fff;
   font-size: 14px;
   cursor: pointer;
+}
+
+#roadMap {
+  width: 500px;
+}
+
+.whatsFront {
+  width: 100%;
+}
+
+@media all and (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
 }
