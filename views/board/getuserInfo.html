@@ -3,16 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css" />
+    <title>MyPage</title>
+    <link rel="stylesheet" href="/css/getUserInfo.css" />
   </head>
   <body>
-    <div class="wrap">
-      <p>userEmail</p>
-      <p>작성일 : {{data.created_at}}</p>
-      <p>작성자 : {{data.writer}}</p>
-      <p>글내용 : {{data.content}}</p>
-      <p>조회수 : {{data.hit}}</p>
+    <div id="container">
+      <div id="root">
+        <div class="title">
+          <h1><a href="/">SHARP</a></h1>
+          <div class="btn">
+            <button class="btnUser">{{user.userNickname}}</button>
+            <button class="btnUser">
+              <a href="/users/getuserInfo">회원정보</a>
+            </button>
+          </div>
+        </div>
+        <div id="myBody">
+          <div class="menuPage">
+            <table>
+              <thead>
+                <tr>
+                  <th>메뉴</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="">마이페이지</a></td>
+                  <td><a href="">댓글목록</a></td>
+                  <td><a href="">회원탈퇴</a></td>
+                  <td><a href="">수정</a></td>
+                  <td><a href="">쪽지</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="infoPage">
+            <div class="myInfo">
+              <span
+                >userEmail
+                <p>1</p></span
+              >
+              <span
+                >userName
+                <p>2</p></span
+              >
+              <span
+                >userNickname
+                <p>3</p></span
+              >
+              <span
+                >userBirth
+                <p>4</p></span
+              >
+              <span
+                >userGrade
+                <p>5</p></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
