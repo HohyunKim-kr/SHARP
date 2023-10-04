@@ -10,25 +10,25 @@
     <div id="container">
       <div id="root">
         <h2>회원가입</h2>
-        <form method="post" action="/users/login">
+        <form method="post" action="/users/userCreate">
           <table>
             <tr>
               <th>* 이름</th>
-              <th><input type="text" /></th>
+              <th><input type="text" name="userName" /></th>
               <th>* 별명</th>
-              <th><input type="text" /></th>
+              <th><input type="text" name="userNickname" /></th>
             </tr>
             <tr>
               <td>* 이메일</td>
-              <td colspan="3"><input type="text" /></td>
+              <td colspan="3"><input type="text" name="userEmail" /></td>
             </tr>
             <tr>
               <td>* 비밀번호</td>
-              <td colspan="3"><input type="password" /></td>
+              <td colspan="3"><input type="password" name="userPassword" /></td>
             </tr>
             <tr>
               <td>* 생년월일</td>
-              <td colspan="3"><input type="text" /></td>
+              <td colspan="3"><input type="text" name="userBirth" /></td>
             </tr>
           </table>
           <button class="btnCreate">회원등록</button>

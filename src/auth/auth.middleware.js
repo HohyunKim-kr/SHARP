@@ -11,7 +11,7 @@ exports.auth = async (req, res, next) => {
     console.log("payload: ", payload);
 
     const user = await userService.findOneByUserId(payload.userEmail);
-    console.log(user);
+
     req.user = user;
     next();
   } catch (e) {

@@ -8,7 +8,7 @@ exports.findOneByUserInfo = async (user_Email, user_Password) => {
     // const [[result]] = await pool.query(sql);
     const [[result]] = await pool.query(sql, [user_Email, user_Password]);
     console.log(user_Email, user_Password);
-    console.log(result);
+    console.log(result + "finone");
 
     return result;
   } catch (err) {
@@ -27,7 +27,6 @@ exports.findOne = async (field, value) => {
 };
 
 exports.createUserInfo = async (
-  userId,
   userEmail,
   userPassword,
   userName,
@@ -35,16 +34,15 @@ exports.createUserInfo = async (
   userNickname
 ) => {
   try {
-    const sql = `INSERT INTO users(userId,userEmail,userPassword,userName,userBirth,userNickname) values(?,?,?,?,?,?)`;
+    const sql = `INSERT INTO users(userEmail,userPassword,userName,userBirth,userNickname) values(?,?,?,?,?)`;
     const [[result]] = await pool.query(sql, [
-      (userId = 2),
       userEmail,
       userPassword,
       userName,
       userBirth,
       userNickname,
     ]);
-    console.log(result);
+    console.log(result + "repo");
     return result;
   } catch (e) {
     console.log("user repo err", e.message);

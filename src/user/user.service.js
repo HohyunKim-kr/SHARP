@@ -18,7 +18,6 @@ exports.postLogin = async (userEmail, userPassword) => {
 };
 
 exports.postUsercreate = async (
-  userId,
   userEmail,
   userPassword,
   userName,
@@ -27,7 +26,6 @@ exports.postUsercreate = async (
 ) => {
   try {
     const result = await userRepository.createUserInfo(
-      userId,
       userEmail,
       userPassword,
       userName,
