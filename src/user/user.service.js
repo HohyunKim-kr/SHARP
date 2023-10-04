@@ -32,9 +32,11 @@ exports.postUsercreate = async (
       userBirth,
       userNickname
     );
-    if (!result) return { isLogin: false, data: null };
-    return { isLogin: true, data: token };
-  } catch (e) {}
+    if (!result) return;
+    return;
+  } catch (e) {
+    console.log("service err" + e.message);
+  }
 };
 
 exports.findOneByUserId = async (userEmail) => {

@@ -35,14 +35,13 @@ exports.createUserInfo = async (
 ) => {
   try {
     const sql = `INSERT INTO users(userEmail,userPassword,userName,userBirth,userNickname) values(?,?,?,?,?)`;
-    const [[result]] = await pool.query(sql, [
+    const [result] = await pool.query(sql, [
       userEmail,
       userPassword,
       userName,
       userBirth,
       userNickname,
     ]);
-    console.log(result + "repo");
     return result;
   } catch (e) {
     console.log("user repo err", e.message);

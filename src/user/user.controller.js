@@ -43,7 +43,6 @@ exports.postUsercreate = async (req, res, next) => {
       userBirth,
       userNickname
     );
-    if (!createUser.isLogin) return res.redirect("/");
     res.redirect("/");
   } catch (e) {
     next();
