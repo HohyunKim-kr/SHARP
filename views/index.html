@@ -11,10 +11,17 @@
         <div class="title">
           <h1>SHARP</h1>
           <div class="btn">
+            {% if user %}
+            <button class="btnUser">{{user.userNickname}}</button>
+            <button class="btnUser">
+              <a href="/users/getuserInfo">회원정보</a>
+            </button>
+            {% else %}
             <button class="btnUser"><a href="/users/login">로그인</a></button>
             <button class="btnUser">
               <a href="/users/userCreate">회원가입</a>
             </button>
+            {% endif %}
           </div>
         </div>
       </div>

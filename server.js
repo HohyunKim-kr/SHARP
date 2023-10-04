@@ -13,7 +13,7 @@ nunjucks.configure("views", {
 });
 
 app.use(cookieParser());
-app.use(express.static("views"));
+app.use(express.static("views/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(middleware.auth);
 

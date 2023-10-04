@@ -1,3 +1,4 @@
+<<<<<<< HEAD:views/css/mywrite.css
 body {
   padding: 0;
   margin: 0;
@@ -124,3 +125,88 @@ button {
   box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
     7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
 }
+=======
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: rgb(254, 239, 203);
+}
+
+#container {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: ridge;
+  border: 2px solid black;
+  width: 800px;
+  height: 700px;
+}
+
+.title {
+  padding: 20px;
+  width: 100px;
+
+  font-size: 30px;
+}
+
+.boxWrite {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boxWrite input {
+  box-sizing: border-box;
+  height: 30px;
+  width: 500px;
+  border-radius: 6px;
+  padding: 20px;
+}
+.boxWrite textarea {
+  box-sizing: border-box;
+  height: 500px;
+  width: 100%;
+  resize: none;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.btnContainer {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+button {
+  outline: none;
+}
+
+.btnPush {
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btnPush:hover {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+}
+>>>>>>> backend:views/public/css/mywrite.css
