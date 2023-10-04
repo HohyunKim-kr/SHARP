@@ -81,7 +81,21 @@
         }
         slides[slideIndex - 1].style.display = "block";
 
-        setTimeout(showSlides, 2000); // 2초마다 이미지가 체인지됩니다
+        setTimeout(showSlides, 2000);
+      }
+      // 로그인 성공
+      const loginBtn = document.querySelector(".btn");
+
+      function hideLoginBtn() {
+        loginBtn.style.display = "none";
+      }
+
+      // 로그인 성공 여부를 확인하는 코드를 여기에 추가합니다.
+      // 로그인 성공 시 hideLoginBtn() 함수를 호출합니다.
+      const loginCookie = document.cookie.match(/로그인 성공=([^;]+)/);
+
+      if (loginCookie) {
+        hideLoginBtn();
       }
     </script>
   </body>
