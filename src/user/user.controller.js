@@ -52,5 +52,5 @@ exports.getLogout = (req, res) => {
 };
 
 exports.getuserInfo = (req, res) => {
-  res.render("board/getuserInfo.html");
+  res.render("board/getuserInfo.html", { user: req.user });
 };
