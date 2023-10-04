@@ -22,18 +22,8 @@ exports.getmywriteList = (req, res) => {
 
 exports.postmywriteList = async (req, res) => {
   try {
-    const { userId, category, id, title, writer, content, created_at, hit } =
-      req.body;
-    const mywriteList = await boardService.postmywriteList(
-      userId,
-      category,
-      id,
-      title,
-      writer,
-      content,
-      created_at,
-      hit
-    );
+    const { id } = boardService.create(req.body);
+    res.redirect(`/boards/myView?id=${id}`);
   } catch (e) {}
 };
 
