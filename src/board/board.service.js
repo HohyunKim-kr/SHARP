@@ -1,7 +1,9 @@
 const boardRepository = require("./board.repository");
 
-exports.postmywriteList = async (title, content) => {
+exports.create = async () => {
   try {
-    const mywriteList = await userService.postmywriteList(title, content);
+    const { title, content } = data;
+    const result = boardRepository.create(title, content);
+    return result;
   } catch (e) {}
 };

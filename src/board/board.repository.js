@@ -11,7 +11,7 @@ const latestId = async (board_id) => {
 };
 
 exports.create = (title, content) => {
-  const id = latestId();
+  const id = latestId(req.id);
   const board = new Board(id, title, writer, content);
   data.push(board);
 
