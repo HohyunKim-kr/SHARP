@@ -34,16 +34,9 @@ exports.getUsercreate = (req, res) => {
 
 exports.postUsercreate = async (req, res, next) => {
   try {
-    const {
-      userId,
-      userEmail,
-      userPassword,
-      userName,
-      userBirth,
-      userNickname,
-    } = req.body;
+    const { userEmail, userPassword, userName, userBirth, userNickname } =
+      req.body;
     const createUser = await userService.postUsercreate(
-      userId,
       userEmail,
       userPassword,
       userName,
