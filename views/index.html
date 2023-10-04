@@ -12,7 +12,9 @@
           <h1>SHARP</h1>
           <div class="btn">
             {% if user %}
-            <button class="btnUser">{{user.userNickname}}</button>
+            <button class="btnUser">
+              {{user.userNickname}} <a href="/users/logout">로그아웃</a>
+            </button>
             <button class="btnUser">
               <a href="/users/getuserInfo">회원정보</a>
             </button>

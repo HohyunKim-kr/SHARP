@@ -9,7 +9,6 @@ exports.postLogin = async (req, res, next) => {
     const userEmail = req.body.userEmail;
     const userPassword = req.body.userPassword;
 
-    console.log("!!! : ", req.body);
     const result = await userService.postLogin(userEmail, userPassword);
     if (!result.isLogin) return res.redirect("/");
 
@@ -50,4 +49,8 @@ exports.postUsercreate = async (req, res, next) => {
 exports.getLogout = (req, res) => {
   res.clearCookie("token");
   res.redirect("/");
+};
+
+exports.getuserInfo = (req, res) => {
+  res.render("board/getuserInfo.html");
 };
