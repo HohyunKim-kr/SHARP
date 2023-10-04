@@ -3,10 +3,11 @@ const pool = require("../../pool");
 exports.findOneByUserInfo = async (user_Email, user_Password) => {
   try {
     // const sql = `select * from users`;
-    // const sql = "SELECT * FROM users where userEmail=? AND userPassword=?";
-    const sql = `SELECT userEmail,userPassword FROM users`;
+    const sql = "SELECT * FROM users where userEmail=? AND userPassword=?";
+    // const sql = `SELECT userEmail,userPassword FROM users`;
     // const [[result]] = await pool.query(sql);
     const [[result]] = await pool.query(sql, [user_Email, user_Password]);
+    console.log(user_Email, user_Password);
     console.log(result);
 
     return result;

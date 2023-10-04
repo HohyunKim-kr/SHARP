@@ -9,6 +9,7 @@ exports.postLogin = async (req, res, next) => {
     const userEmail = req.body.userEmail;
     const userPassword = req.body.userPassword;
 
+    console.log(req.body);
     const result = await userService.postLogin(userEmail, userPassword);
     // const { userEmail, userPassword } = req.body;
     // const result = await userService.postLogin(userEmail, userPassword);
