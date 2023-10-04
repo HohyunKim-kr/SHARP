@@ -24,9 +24,11 @@
         <div id="lnb">
           <h2>Front-end</h2>
           <div class="commentTable">
-            <button class="writeBtn">
-              <a href="/boards/mywrite">글쓰기</a>
-            </button>
+            <div class="frame">
+              <button class="writeBtn">
+                <a href="/boards/mywrite">글쓰기</a>
+              </button>
+            </div>
             <table>
               <thead>
                 <tr>
@@ -36,8 +38,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>2</td>
+                  <td>{{data.writer}}</td>
+                  <td>{{data.created_at}}</td>
                 </tr>
               </tbody>
             </table>

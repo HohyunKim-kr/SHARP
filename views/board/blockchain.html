@@ -23,30 +23,27 @@
       <div id="pageInfo">
         <div id="lnb">
           <h2>Block-Chain</h2>
-          <ul>
-            <li class="lnb1">1.원리와 구조 이해</li>
-            <li><a href="">분산형 데이터베이스</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href="">5</a></li>
-          </ul>
-          <ul>
-            <li class="lnb2">2.스마트 컨트랙트</li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href="">5</a></li>
-          </ul>
-          <ul>
-            <li class="lnb3">3.솔리디티</li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href="">5</a></li>
-          </ul>
+          <div class="commentTable">
+            <div class="frame">
+              <button class="writeBtn">
+                <a href="/boards/mywrite">글쓰기</a>
+              </button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>제목</th>
+                  <th>날짜</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{data.writer}}</td>
+                  <td>{{data.created_at}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div>
             <ul class="comment">
               <li class="commentForm">
@@ -60,7 +57,7 @@
                       name="content"
                     />
                   </span>
-                  <input type="submit" class="btn" value="등록" />
+                  <input type="submit" class="commentBtn" value="등록" />
                 </form>
               </li>
               <li id="commentList"></li>
