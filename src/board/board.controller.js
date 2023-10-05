@@ -17,10 +17,16 @@ exports.getCommentList = (req, res) => {
 };
 
 exports.getWriteboard = (req, res) => {
-  res.render("board/Writeboard.html");
+  res.render("board/writeBoard.html");
 };
 
-exports.postWriteboard = (req, res) => {
+exports.postWriteboard = async (req, res, next) => {
+  try {
+    const { title, content } = req.body;
+    const createBoard = await boardService.postWriteboard(title, content);
+  } catch (e) {
+    next();
+  }
   res.render("board/front.html");
 };
 

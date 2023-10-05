@@ -1,9 +1,11 @@
 const boardRepository = require("./board.repository");
 
-exports.create = async () => {
+exports.postWriteboard = async (title, content) => {
   try {
-    const { title, content } = data;
-    const result = boardRepository.create(title, content);
-    return result;
-  } catch (e) {}
+    const result = await boardRepository.createWriteboard(title, content);
+    if (!result) return;
+    return;
+  } catch (e) {
+    console.log("board service err" + e.message);
+  }
 };
