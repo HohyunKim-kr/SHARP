@@ -23,6 +23,33 @@
       <div id="pageInfo">
         <div id="lnb">
           <h2>Front-end</h2>
+          <div class="commentTable">
+            <div class="frame">
+              <button class="writeBtn">
+                <a href="/boards/writeBoard">글쓰기</a>
+              </button>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>제목</th>
+                  <th>날짜</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {% set list = data %} {% for row in list %}
+                  <td class="content">
+                    <a href="/boards/myView?id={{row.boardId}}">
+                      {{row.title}}
+                    </a>
+                  </td>
+                  <td class="content">{{row.created_at}}</td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div>
             <ul class="comment">
               <li class="commentForm">
@@ -49,31 +76,6 @@
         <div class="whatsFront">
           <img src="/img/프론트란.png" alt="" />
         </div>
-      </div>
-      <div class="commentTable">
-        <div class="frame">
-          <button class="writeBtn">
-            <a href="/boards/writeBoard">글쓰기</a>
-          </button>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>제목</th>
-              <th>날짜</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {% set list = data %} {% for row in list %}
-              <td class="content">
-                <a href="/boards/myView">{{row.title}}</a>
-              </td>
-              <td class="content">{{row.created_at}}</td>
-              {% endfor %}
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </body>
