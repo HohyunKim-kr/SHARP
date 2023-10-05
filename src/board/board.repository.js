@@ -12,11 +12,22 @@ exports.createWriteboard = async (title, content) => {
 
 exports.frontendboardList = async () => {
   try {
-    const sql = `SELECT title, created_at FROM frontendBoard`;
+    const sql = `SELECT title, created_at, boardId FROM frontendBoard`;
     const [result] = await pool.query(sql);
     console.log(result);
     return result;
   } catch (e) {
     console.log("ffb err" + e.message);
+  }
+};
+
+exports.findMyview = async (boardId) => {
+  try {
+    const sql = `SELECT title, writer, content, created_at, category FROM frontendBoard where boardId = ?`;
+    const [[result]] = await pool.query(sql, [boardId]);
+    console.log(result);
+    return result;
+  } catch (e) {
+    console.log("repo findmyview err" + e.message);
   }
 };

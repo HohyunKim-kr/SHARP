@@ -10,7 +10,7 @@ exports.postWriteboard = async (title, content) => {
   }
 };
 
-exports.postFrontendboard = async () => {
+exports.getFrontendboard = async () => {
   try {
     const result = await boardRepository.frontendboardList();
     if (!result) return;
@@ -18,4 +18,20 @@ exports.postFrontendboard = async () => {
   } catch (e) {
     console.log("board service  frontboard err" + e.message);
   }
+};
+
+exports.getmyView = async (boardId) => {
+  try {
+    const result = await boardRepository.findMyview(boardId);
+    if (!result) return;
+    console.log(result);
+    return result;
+  } catch (e) {
+    console.log("service getmyview err" + e.message);
+  }
+};
+
+exports.postmodifyBoard = async () => {
+  try {
+  } catch (e) {}
 };
