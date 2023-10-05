@@ -7,10 +7,16 @@ router.get("/front", boardcontroller.getFront);
 router.get("/back", boardcontroller.getBack);
 router.get("/blockchain", boardcontroller.getBlockchain);
 
-router.get("/commentList", boardcontroller.getCommentList);
+// create
 router.get("/mywriteList", boardcontroller.getmywriteList);
 router.post("/mywriteList", boardcontroller.postmywriteList);
 
+// read
+router.get("/commentList", boardcontroller.getCommentList);
 router.get("/myView", boardcontroller.getmyView);
+
+// update
+
+// delete
 
 module.exports = router;

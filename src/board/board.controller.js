@@ -16,15 +16,12 @@ exports.getCommentList = (req, res) => {
   res.render("board/commentList.html");
 };
 
-exports.getmywriteList = (req, res) => {
-  res.render("board/mywriteList.html");
+exports.getWriteboard = (req, res) => {
+  res.render("board/Writeboard.html");
 };
 
-exports.postmywriteList = async (req, res) => {
-  try {
-    const { id } = boardService.create(req.body);
-    res.redirect(`/boards/myView?id=${id}`);
-  } catch (e) {}
+exports.postWriteboard = (req, res) => {
+  res.render("board/front.html");
 };
 
 exports.getmyView = (req, res) => {
