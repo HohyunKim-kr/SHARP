@@ -9,3 +9,13 @@ exports.postWriteboard = async (title, content) => {
     console.log("board service err" + e.message);
   }
 };
+
+exports.postFrontendboard = async () => {
+  try {
+    const result = await boardRepository.frontendboardList();
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("board service  frontboard err" + e.message);
+  }
+};
