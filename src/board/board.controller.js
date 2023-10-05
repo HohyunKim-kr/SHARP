@@ -1,7 +1,8 @@
 const boardService = require("./board.service");
 
-exports.getFront = (req, res) => {
-  res.render("board/front.html");
+exports.getFront = async (req, res) => {
+  const getfrontList = await boardService.postFrontendboard();
+  res.render("board/front.html", { data: getfrontList });
 };
 
 exports.getBack = (req, res) => {
@@ -24,10 +25,10 @@ exports.postWriteboard = async (req, res, next) => {
   try {
     const { title, content } = req.body;
     const createBoard = await boardService.postWriteboard(title, content);
+    res.redirect("/boards/front");
   } catch (e) {
     next();
   }
-  res.render("board/front.html");
 };
 
 exports.getmyView = (req, res) => {
