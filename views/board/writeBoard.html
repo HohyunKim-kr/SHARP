@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="/css/mywrite.css" />
+    <script src="/js/writePage.js"></script>
   </head>
   <body>
     <div id="container">
@@ -12,18 +13,29 @@
         <h2><a href="/">SHARP</a></h2>
         <div class="btn">
           <a href="/boards/back" class="btnDev">Back-end</a>
+          <a href="/boards/front" class="btnDev">Front-end</a>
           <a href="/boards/blockchain" class="btnDev">Block-chain</a>
         </div>
       </div>
-      <div id="root">
-        <div class="title">글쓰기</div>
-        <form method="post" action="" class="boxWrite">
-          <input type="text" placeholder="제목" />
-          <textarea placeholder="내용" name="" id=""></textarea>
-          <div class="btnContainer">
-            <button class="btnPush">등록</button>
-          </div>
-        </form>
+      <div id="pageInfo">
+        <div id="lnb">
+          <select name="" id="selectBox" class="pl">
+            <option value="0">목록선택</option>
+            <option value="frontEnd">Front-End</option>
+            <option value="backEnd">Back-End</option>
+            <option value="blockChain">Block-Chain</option>
+          </select>
+        </div>
+        <div id="root">
+          <div class="title">게시판</div>
+          <form method="post" action="/" class="boxWrite">
+            <input type="text" placeholder="제목" />
+            <textarea placeholder="내용" name="" id=""></textarea>
+            <div class="btnContainer">
+              <button class="btnPush">등록</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </body>

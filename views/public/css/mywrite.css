@@ -2,7 +2,16 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: rgb(254, 239, 203);
+  background: rgb(248, 240, 223);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
 }
 
 #container {
@@ -13,44 +22,66 @@ body {
 #pageTitle {
   width: 100%;
   height: 50px;
-  border: 1px solid black;
+  background: rgb(175, 122, 8);
   padding: 10px 5px;
   display: flex;
   justify-content: space-between;
+  border: 1px solid black;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
 }
 
 h2 {
   margin: 5px;
+  padding: 5px;
 }
 
 h2 a {
-  color: red;
+  color: rgb(129, 5, 5);
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.pl {
+  width: 200px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 12px 13px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.pl:focus {
+  border: 1px solid #3d25d9;
+  box-sizing: border-box;
+  border-radius: 10px;
+  outline: 3px solid #f8e4ff;
+  border-radius: 10px;
 }
 
 .btnDev {
   position: relative;
   display: inline-block;
-  color: #f874b8;
+  color: #593d1a;
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.5s;
   letter-spacing: 4px;
   overflow: hidden;
-  margin-right: 50px;
-}
-
-.btnDevn:hover {
-  background: #ef85b7;
-  color: #050801;
-  box-shadow: 0 0 5px #ef85b7, 0 0 25px #ef85b7, 0 0 50px #ef85b7,
-    0 0 200px #ef85b7;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  margin-right: 5px;
+  width: 100%;
 }
 
 #root {
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,15 +89,19 @@ h2 a {
   margin-left: auto;
   margin-right: auto;
   border-style: ridge;
-  border: 2px solid black;
-  width: 800px;
-  height: 700px;
+  border: none;
+  width: 900px;
+  height: 100%;
 }
 
 .title {
-  padding: 20px;
-  width: 100px;
+  padding: 50px;
+  /* width: 100px; */
   font-size: 30px;
+}
+
+.title > a {
+  text-decoration: none;
   color: rgb(245, 89, 89);
 }
 
@@ -79,7 +114,7 @@ h2 a {
 .boxWrite input {
   box-sizing: border-box;
   height: 30px;
-  width: 500px;
+  width: 800px;
   border-radius: 6px;
   padding: 20px;
 }
@@ -106,7 +141,7 @@ button {
   width: 130px;
   height: 40px;
   padding: 10px 25px;
-  border: 2px solid #000;
+  /* border: 2px solid #000; */
   font-family: "Lato", sans-serif;
   font-weight: 500;
   background: transparent;
@@ -119,4 +154,19 @@ button {
 .btnPush:hover {
   box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
     7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+}
+#pageInfo {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: 100%;
+}
+
+#lnb {
+  height: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
 }
