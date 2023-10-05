@@ -27,6 +27,19 @@ td {
   background: #fff;
 }
 
+tbody tr {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 #pageTitle {
   width: 100%;
   height: 50px;
@@ -277,13 +290,56 @@ thead tr th {
   width: 90%;
 }
 
-@media all and (max-width: 768px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
+.content {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.content a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: center;
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -moz-animation: content 10s linear infinite;
+  -webkit-animation: content 10s linear infinite;
+  animation: content 10s linear infinite;
+}
+@-moz-keyframes content {
+  0% {
+    -moz-transform: translateX(100%);
   }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes content {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+@keyframes content {
+  0% {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+.content a:hover {
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
 }

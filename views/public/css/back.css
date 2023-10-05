@@ -27,6 +27,12 @@ td {
   background: #fff;
 }
 
+tbody tr {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 #pageTitle {
   width: 100%;
   height: 50px;
@@ -165,7 +171,7 @@ thead tr th {
 }
 
 #lnb {
-  width: 600px;
+  width: 700px;
   height: 100%;
   box-sizing: border-box;
   display: flex;

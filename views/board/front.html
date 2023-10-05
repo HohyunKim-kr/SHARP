@@ -39,8 +39,10 @@
               <tbody>
                 <tr>
                   {% set list = data %} {% for row in list %}
-                  <td><a href="/boards/myView">{{row.title}}</a></td>
-                  <td>{{row.created_at}}</td>
+                  <td class="content">
+                    <a href="/boards/myView">{{row.title}}</a>
+                  </td>
+                  <td class="content">{{row.created_at}}</td>
                   {% endfor %}
                 </tr>
               </tbody>
