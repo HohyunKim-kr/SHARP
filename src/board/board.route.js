@@ -8,8 +8,8 @@ router.get("/back", boardcontroller.getBack);
 router.get("/blockchain", boardcontroller.getBlockchain);
 
 // create
-router.get("/mywriteList", boardcontroller.getmywriteList);
-router.post("/mywriteList", boardcontroller.postmywriteList);
+router.get("/writeBoard", boardcontroller.getWriteboard);
+router.post("/writeBoard", boardcontroller.postWriteboard);
 
 // read
 router.get("/commentList", boardcontroller.getCommentList);
