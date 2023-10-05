@@ -22,10 +22,6 @@ td {
   padding: 1em 0;
   vertical-align: middle;
 }
-td {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  background: #fff;
-}
 
 tbody tr {
   display: flex;

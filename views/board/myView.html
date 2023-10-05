@@ -4,23 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/myVew.css" />
   </head>
   <body>
-    <div class="wrap">
-      <form method="post" action="/index.html" class="login">
-        <h1>SHARP</h1>
-        <h2>User Login</h2>
-        <div class="login_id">
-          <input type="email" placeholder="Email" id="myId" />
+    <div id="container">
+      <div id="root">
+        <div class="title">
+          <h1><a href="/">SHARP</a></h1>
+          <div class="btn">
+            <button class="btnUser">{{user.userNickname}}</button>
+            <button class="btnUser">
+              <a href="/users/getuserInfo">회원정보</a>
+            </button>
+          </div>
         </div>
-        <div class="login_pw">
-          <input type="password" placeholder="Password" id="myPW" />
+        <div id="myBody">
+          <div class="menuPage">
+            <table>
+              <thead>
+                <tr>
+                  <th>메뉴</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/users/getuserInfo">마이페이지</a></td>
+                  <td><a href="">회원탈퇴</a></td>
+                  <td><a href="">수정</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="viewPage">
+            <div class="myView">
+              <span
+                >userEmail
+                <p>{{user.userEmail}}</p></span
+              >
+              <span
+                >userName
+                <p>{{user.userName}}</p></span
+              >
+              <span
+                >userNickname
+                <p>{{user.userNickname}}</p></span
+              >
+              <span
+                >userBirth
+                <p>{{user.userBirth}}</p></span
+              >
+              <span
+                >userGrade
+                <p>{{user.userGrade}}</p></span
+              >
+            </div>
+          </div>
         </div>
-        <div class="login_sub">
-          <input type="submit" value="submit" id="myLogin" />
-        </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>
