@@ -1,19 +1,12 @@
 const pool = require("../../pool");
 
-const latestId = async (board_id) => {
+exports.createWriteboard = async (title, content) => {
   try {
-    const [[id]] = await pool.query(sql, [board_id]);
-
-    return id;
+    console.log(title + " " + content);
+    const sql = `INSERT INTO frontendBoard(title,content) values(?,?)`;
+    const [result] = await pool.query(sql, [title, content]);
+    return result;
   } catch (e) {
-    throw new Error("Repository Error " + e.messsgae);
+    console.log("board repo err " + e.message);
   }
-};
-
-exports.create = (title, content) => {
-  const id = latestId(req.id);
-  const board = new Board(id, title, writer, content);
-  data.push(board);
-
-  return board;
 };
