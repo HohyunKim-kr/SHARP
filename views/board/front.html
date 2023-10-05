@@ -38,8 +38,10 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>{{data.writer}}</td>
-                  <td>{{data.created_at}}</td>
+                  {% set list = data %} {% for row in list %}
+                  <td><a href="/boards/myView">{{row.title}}</a></td>
+                  <td>{{row.created_at}}</td>
+                  {% endfor %}
                 </tr>
               </tbody>
             </table>
