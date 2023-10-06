@@ -63,7 +63,7 @@ h2 a {
 }
 
 #pageInfo {
-  padding-top: 100px;
+  padding-top: 150px;
   display: flex;
   flex-direction: row;
   border: 1px solid black;
@@ -93,7 +93,7 @@ h2 a {
 
 .whatsFront img {
   box-sizing: border-box;
-  width: 100%;
+  width: 800px;
   height: 100%;
   display: flex;
 }

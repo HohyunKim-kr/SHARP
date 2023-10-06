@@ -46,7 +46,9 @@ h1 a {
   padding: 10px 5px;
   display: flex;
   justify-content: space-between;
-  background: rgb(60, 189, 209);
+  background: rgb(255, 255, 255);
+  position: fixed;
+  z-index: 1;
 }
 
 td a {
@@ -62,6 +64,7 @@ td a {
   border: 0.4em inset #009688;
   display: flex;
   flex-direction: row;
+  padding-top: 80px;
 }
 
 .menuPage table {
