@@ -42,3 +42,12 @@ exports.postmodifyBoard = async (title, content, boardId) => {
     console.log("service postmodifyboard err" + e.message);
   }
 };
+
+exports.getDelete = async (boardId) => {
+  try {
+    const result = boardRepository.deleteBoard(boardId);
+    if (!result) return;
+  } catch (e) {
+    console.log("service geteDelte err" + e.message);
+  }
+};
