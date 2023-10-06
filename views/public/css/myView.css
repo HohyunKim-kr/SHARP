@@ -18,19 +18,29 @@ body {
   gap: 20px;
   text-align: center;
 }
-.btnUser {
+.btnDev {
   position: relative;
-  border: none;
   display: inline-block;
-  background-color: rgb(246, 160, 69);
-  background: rgb(255, 214, 214);
-  padding: 15px 30px;
-  border-radius: 15px;
-  font-family: "paybooc-Light", sans-serif;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: #593d1a;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.25s;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
+}
+
+.btn {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: start;
+  gap: 10px;
+}
+
+.btnDev a {
+  text-decoration: none;
 }
 
 h1 a {
@@ -41,8 +51,7 @@ h1 a {
 
 .title {
   width: 100%;
-  height: 50px;
-  /* border: 1px solid black; */
+  height: 70px;
   padding: 10px 5px;
   display: flex;
   justify-content: space-between;
@@ -59,12 +68,12 @@ td a {
 }
 
 #myBody {
+  padding-top: 120px;
   width: 100%;
   height: 500px;
   border: 0.4em inset #009688;
   display: flex;
   flex-direction: row;
-  padding-top: 80px;
 }
 
 .menuPage table {
@@ -102,4 +111,117 @@ span {
 
 span p {
   text-align: center;
+}
+
+#rootComment {
+  padding: 0;
+  margin: 0 auto;
+  width: 900px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-top: 80px;
+  width: 100%px;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.comment > li {
+  margin-top: 20px;
+}
+
+.comment > li:nth-child(1) {
+  margin: 0px;
+}
+
+.comment-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.comment-row > li:nth-child(2) {
+  flex-shrink: 0;
+  flex-grow: 1;
+  padding-left: 15px;
+  z-index: 1;
+  width: 100%;
+}
+
+.commentForm > form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.commentForm > form > h4 {
+  width: 100%;
+  margin: 14px 0 14px 0;
+}
+
+.comment-content {
+  cursor: pointer;
+  word-break: break-all;
+  padding-right: 25px;
+}
+
+.ps_box {
+  display: block;
+  position: relative;
+  width: 80%;
+  height: 150px;
+  border: solid 1px #dadada;
+  padding: 14px;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.int {
+  display: block;
+  position: relative;
+  width: 95%;
+  height: 80px;
+  padding-right: 23px;
+  line-height: 29px;
+  border: none;
+  background: #fff;
+  font-size: 15px;
+  box-sizing: border-box;
+  z-index: 10;
+  resize: none;
+}
+.commentBtn {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  position: absolute;
+  left: 80%;
+}
+
+#commentList {
+  padding: 5px;
+  box-sizing: border-box;
+  border: 2px solid #a49696;
+  background-color: #fff;
+  width: 80%;
+  height: 400px;
 }

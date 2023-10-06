@@ -12,10 +12,20 @@
         <div class="title">
           <h1><a href="/">SHARP</a></h1>
           <div class="btn">
-            <button class="btnUser">{{user.userNickname}}</button>
-            <button class="btnUser">
-              <a href="/users/getuserInfo">회원정보</a>
-            </button>
+            {% if user %}
+            <div class="userName">
+              <h4>{{user.userNickname}}님 환영합니다</h4>
+            </div>
+            <a href="/users/logout" class="btnDev">로그아웃</a>
+
+            <a href="/users/getuserInfo" class="btnDev">회원정보</a>
+
+            {% else %}
+            <a href="/users/login" class="btnDev">로그인</a>
+
+            <a href="/users/userCreate" class="btnDev">회원가입</a>
+
+            {% endif %}
           </div>
         </div>
         <div id="myBody">
@@ -66,6 +76,25 @@
             </div>
           </div>
         </div>
+      </div>
+      <div id="rootComment">
+        <ul class="comment">
+          <li class="commentForm">
+            <form id="commentFrm" action="">
+              <span class="ps_box">
+                <p>{{user.userNickname}}님</p>
+                <textarea
+                  type="text"
+                  placeholder="댓글을 입력 해주세요"
+                  class="int"
+                  name="content"
+                ></textarea>
+                <input type="submit" class="commentBtn" value="등록" />
+              </span>
+            </form>
+          </li>
+          <li id="commentList"></li>
+        </ul>
       </div>
     </div>
   </body>

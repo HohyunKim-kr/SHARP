@@ -29,7 +29,7 @@ h2 a {
 
 #pageTitle {
   width: 100%;
-  height: 100px;
+  height: 70px;
   /* border: 1px solid black; */
   background: rgb(250, 250, 250);
   padding: 10px 5px;
@@ -39,17 +39,21 @@ h2 a {
   z-index: 1;
 }
 
-#pageTitle .title_1 {
-  width: 200px;
-  height: 20px;
-}
-
-#pageTitle .title_1 h5 > a {
+.btn {
+  padding: 10px;
   display: flex;
+  justify-content: flex-start;
   flex-direction: row;
-  text-decoration: none;
+  align-items: start;
+  gap: 10px;
 }
 
+h4 {
+  font-family: "Libre Baskerville", serif;
+  font-family: "Noto Serif KR", serif;
+  color: #815d0e;
+  text-align: center;
+}
 .commentTable {
   width: 100%;
   height: 100%;
@@ -63,7 +67,7 @@ h2 a {
 }
 
 #pageInfo {
-  padding-top: 150px;
+  padding-top: 130px;
   display: flex;
   flex-direction: row;
   border: 1px solid black;

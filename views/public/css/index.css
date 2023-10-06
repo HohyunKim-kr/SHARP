@@ -24,6 +24,10 @@ header .title {
   gap: 10px;
 }
 
+.userName {
+  padding: 10px;
+}
+
 button a {
   text-transform: uppercase;
   text-decoration: none;
@@ -33,6 +37,26 @@ h1 {
   padding: 5px;
   font-size: 50px;
   color: rgb(246, 78, 78);
+}
+h2 {
+  font-size: 50px;
+  font-family: "Libre Baskerville", serif;
+  font-family: "Noto Serif KR", serif;
+  color: #815d0e;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: "Libre Baskerville", serif;
+  font-family: "Noto Serif KR", serif;
+  color: #d0a854;
+}
+
+h4 {
+  font-family: "Libre Baskerville", serif;
+  font-family: "Noto Serif KR", serif;
+  color: #815d0e;
+  text-align: center;
 }
 
 .btnList {
@@ -50,18 +74,6 @@ h1 {
 
 #root {
   padding-top: 100px;
-}
-
-h2 {
-  font-size: 50px;
-  font-family: "Libre Baskerville", serif;
-  font-family: "Noto Serif KR", serif;
-}
-
-h3 {
-  font-size: 30px;
-  font-family: "Libre Baskerville", serif;
-  font-family: "Noto Serif KR", serif;
 }
 
 li {

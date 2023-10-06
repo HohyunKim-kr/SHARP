@@ -15,6 +15,22 @@ h2 a {
   text-decoration: none;
 }
 
+.btn {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: start;
+  gap: 10px;
+}
+
+h4 {
+  font-family: "Libre Baskerville", serif;
+  font-family: "Noto Serif KR", serif;
+  color: #815d0e;
+  text-align: center;
+}
+
 .btnDev {
   position: relative;
   display: inline-block;
@@ -211,7 +227,7 @@ table.type09 tbody th {
   background: #f3f6f7;
 }
 table.type09 td {
-  width: 350px;
+  width: 850px;
   padding: 10px;
   vertical-align: top;
   border-bottom: 1px solid #ccc;
@@ -243,8 +259,3 @@ a.button {
   box-shadow: 0px 5px 0px 0px #007144;
   text-decoration: none;
 }
-
-/* tbody {
-  display: flex;
-  flex-direction: column;
-} */
