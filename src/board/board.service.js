@@ -31,7 +31,13 @@ exports.getmyView = async (boardId) => {
   }
 };
 
-exports.postmodifyBoard = async () => {
+exports.postmodifyBoard = async (title, content) => {
   try {
-  } catch (e) {}
+    const result = await boardRepository.updateBoard(title, content);
+    if (!result) return;
+    console.log(result);
+    return result;
+  } catch (e) {
+    console.log("service postmodifyboard err" + e.message);
+  }
 };
