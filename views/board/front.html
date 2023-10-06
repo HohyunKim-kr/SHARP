@@ -22,7 +22,7 @@
       </div>
       <div id="pageInfo">
         <div id="lnb">
-          <h2>Front-end</h2>
+          <h2>Comment</h2>
           <ul class="comment">
             <li class="commentForm">
               <form id="commentFrm" action="">
@@ -56,22 +56,25 @@
           <table class="type09">
             <thead>
               <tr>
-                <th scope="cols">타이틀</th>
-                <th scope="cols">내용</th>
-                <th scope="cols">이름</th>
+                <th scope="cols">no.</th>
+                <th scope="cols">제목</th>
                 <th scope="cols">시간</th>
+                <th scope="cols">닉네임</th>
+                <th scope="cols">조회수</th>
+                <th scope="cols">추천수</th>
               </tr>
             </thead>
             <tbody>
               {% set list = data %} {% for row in list %}
               <tr>
-                <th scope="row">
+                <th scope="row">{{row.Num}}</th>
+                <td>
                   <a href="/boards/myView?id={{row.boardId}}">{{row.title}}</a>
-                </th>
-                <!-- <td>
-                  <a href="/boards/myView?id={{row.boardId}}">{{row.title}}</a>
-                </td> -->
+                </td>
                 <td>{{row.created_at}}</td>
+                <td>{{row.userNickname}}</td>
+                <td>{{row.views}}</td>
+                <td>{{row.likes}}</td>
               </tr>
               {% endfor %}
 
@@ -82,10 +85,12 @@
                 <td>시간</td>
               </tr>
               <tr>
-                <th scope="row">항목명</th>
-                <td>내용이 들어갑니다.</td>
-                <td>이름</td>
-                <td>내용이 들어갑니다.</td>
+                <th scope="row">no.999</th>
+                <td>제목</td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
               </tr>
             </tbody>
           </table>
