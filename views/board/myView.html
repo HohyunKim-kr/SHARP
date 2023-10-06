@@ -82,12 +82,15 @@
           <li class="commentForm">
             <form id="commentFrm" action="">
               <span class="ps_box">
+                {% if user %}
                 <p>{{user.userNickname}}님</p>
+                {% endif %}
                 <textarea
                   type="text"
                   placeholder="댓글을 입력 해주세요"
                   class="int"
                   name="content"
+                  cols="100"
                 ></textarea>
                 <input type="submit" class="commentBtn" value="등록" />
               </span>
