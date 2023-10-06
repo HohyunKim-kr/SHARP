@@ -11,7 +11,7 @@ body {
 }
 
 h2 a {
-  color: rgb(129, 5, 5);
+  color: rgb(246, 78, 78);
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -35,9 +35,8 @@ tbody tr {
 
 #pageTitle {
   width: 100%;
-  height: 50px;
-  border: 1px solid black;
-  background: rgb(175, 122, 8);
+  height: 70px;
+  background: rgb(255, 255, 255);
   padding: 10px 5px;
   display: flex;
   justify-content: space-between;
