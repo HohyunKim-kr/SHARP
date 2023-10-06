@@ -28,6 +28,7 @@
         <div id="root">
           <div class="title">게시판</div>
           <form method="post" action="/boards/modify" class="boxWrite">
+            <input type="hidden" name="id" value="{{id}}" />
             <input type="text" placeholder="제목" name="title" />
             <textarea placeholder="내용" name="content" id=""></textarea>
             <div class="btnContainer">
