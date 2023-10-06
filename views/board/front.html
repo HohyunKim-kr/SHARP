@@ -65,7 +65,9 @@
             <tbody>
               {% set list = data %} {% for row in list %}
               <tr>
-                <th scope="row"><a href="/boards/myView?id={{row.boardId}}">{{row.title}}</th>
+                <th scope="row">
+                  <a href="/boards/myView?id={{row.boardId}}"></a>{{row.title}}
+                </th>
                 <!-- <td>
                   <a href="/boards/myView?id={{row.boardId}}">{{row.title}}</a>
                 </td> -->
@@ -76,9 +78,13 @@
               <tr>
                 <th scope="row">항목명</th>
                 <td>내용이 들어갑니다.</td>
+                <td>이름</td>
+                <td>시간</td>
               </tr>
               <tr>
                 <th scope="row">항목명</th>
+                <td>내용이 들어갑니다.</td>
+                <td>이름</td>
                 <td>내용이 들어갑니다.</td>
               </tr>
             </tbody>
