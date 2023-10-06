@@ -235,3 +235,8 @@ a.button {
   box-shadow: 0px 5px 0px 0px #007144;
   text-decoration: none;
 }
+
+tbody {
+  display: flex;
+  flex-direction: column;
+}
