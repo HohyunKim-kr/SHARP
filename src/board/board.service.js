@@ -24,18 +24,19 @@ exports.getmyView = async (boardId) => {
   try {
     const result = await boardRepository.findMyview(boardId);
     if (!result) return;
-    console.log(result);
+    // console.log(result);
     return result;
   } catch (e) {
     console.log("service getmyview err" + e.message);
   }
 };
 
-exports.postmodifyBoard = async (title, content) => {
+exports.postmodifyBoard = async (title, content, boardId) => {
   try {
-    const result = await boardRepository.updateBoard(title, content);
+    const result = await boardRepository.updateBoard(title, content, boardId);
     if (!result) return;
-    console.log(result);
+    // console.log(boardId);
+    // console.log(result);
     return result;
   } catch (e) {
     console.log("service postmodifyboard err" + e.message);

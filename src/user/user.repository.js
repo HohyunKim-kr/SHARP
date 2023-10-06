@@ -7,8 +7,7 @@ exports.findOneByUserInfo = async (user_Email, user_Password) => {
     // const sql = `SELECT userEmail,userPassword FROM users`;
     // const [[result]] = await pool.query(sql);
     const [[result]] = await pool.query(sql, [user_Email, user_Password]);
-    console.log(user_Email, user_Password);
-    console.log(result + "finone");
+    // console.log(result + "finone");
 
     return result;
   } catch (err) {
