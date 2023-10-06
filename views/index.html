@@ -11,18 +11,16 @@
         <div class="title">
           <h1>SHARP</h1>
           <div class="btn">
-            {% if user %}
-            <button class="btnUser">
-              {{user.userNickname}} <a href="/users/logout">로그아웃</a>
-            </button>
-            <button class="btnUser">
-              <a href="/users/getuserInfo">회원정보</a>
-            </button>
+            {% if user %} {{user.userNickname}}
+            <a href="/users/logout" class="btnDev">로그아웃</a>
+
+            <a href="/users/getuserInfo" class="btnDev">회원정보</a>
+
             {% else %}
-            <button class="btnUser"><a href="/users/login">로그인</a></button>
-            <button class="btnUser">
-              <a href="/users/userCreate">회원가입</a>
-            </button>
+            <a href="/users/login" class="btnDev">로그인</a>
+
+            <a href="/users/userCreate" class="btnDev">회원가입</a>
+
             {% endif %}
           </div>
         </div>
