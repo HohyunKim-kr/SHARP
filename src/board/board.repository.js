@@ -31,3 +31,14 @@ exports.findMyview = async (boardId) => {
     console.log("repo findmyview err" + e.message);
   }
 };
+
+exports.updateBoard = async (title, content, boardId) => {
+  try {
+    const sql = `UPDATE title, content from frontendBoard where boardId=?`;
+    result[[result]] = await pool.query(sql, [title, content, boardId]);
+    console.log(result);
+    return result;
+  } catch (e) {
+    console.log("Repo update err" + e.message);
+  }
+};
