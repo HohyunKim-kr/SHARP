@@ -16,8 +16,8 @@ router.get("/commentList", boardcontroller.getCommentList);
 router.get("/myView", boardcontroller.getmyView);
 
 // update
-// router.get("/modify", boardcontroller.getModify);
-// router.post("/modify", boardcontroller.postModify);
+router.get("/modify", boardcontroller.getModify);
+router.post("/modify", boardcontroller.postModify);
 
 // delete
 // router.get("/delete", boardcontroller.getModify);
