@@ -218,6 +218,11 @@ table.type09 td {
   padding-left: 50px;
 }
 
+tr a {
+  text-decoration: none;
+  text-align: center;
+}
+
 a.button {
   display: block;
   position: relative;
