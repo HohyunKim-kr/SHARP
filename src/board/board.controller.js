@@ -27,18 +27,22 @@ exports.postWriteboard = async (req, res, next) => {
     const createBoard = await boardService.postWriteboard(title, content);
     res.redirect("/boards/front");
   } catch (e) {
-    next();
+    next(e);
   }
 };
 
-exports.getmyView = async (req, res) => {
-  const boardId = req.query.id;
-  const userData = req.user;
-  const getmyViewpage = await boardService.getmyView(boardId);
-  res.render("board/myView.html", {
-    board: getmyViewpage,
-    user: userData,
-  });
+exports.getmyView = async (req, res, next) => {
+  try {
+    const boardId = req.query.id;
+    const userData = req.user;
+    const getmyViewpage = await boardService.getmyView(boardId);
+    res.render("board/myView.html", {
+      board: getmyViewpage,
+      user: userData,
+    });
+  } catch (e) {
+    next(e);
+  }
 };
 
 exports.getModify = (req, res) => {
@@ -56,6 +60,16 @@ exports.postModify = async (req, res, next) => {
 
     const { title, content, id } = req.body;
     const modifyBoard = await boardService.postmodifyBoard(title, content, id);
+    res.redirect("/boards/front");
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.getDelete = async (req, res, next) => {
+  try {
+    const boardId = req.query.id;
+    const deleteBoard = await boardService.getDelete(boardId);
     res.redirect("/boards/front");
   } catch (e) {
     next(e);

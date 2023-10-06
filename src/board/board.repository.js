@@ -39,3 +39,13 @@ exports.updateBoard = async (title, content, boardId) => {
     console.log("Repo update err" + e.message);
   }
 };
+
+exports.deleteBoard = async (boardId) => {
+  try {
+    const sql = `DELETE FROM frontendBoard where boardId =?`;
+    const [result] = await pool.query(sql, [boardId]);
+    return result;
+  } catch (e) {
+    console.log("Repo deleteBoard err " + e.message);
+  }
+};
