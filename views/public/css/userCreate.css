@@ -3,6 +3,10 @@
   box-sizing: border-box;
   font-family: "Roboto";
 }
+h1 a {
+  text-decoration: none;
+  color: rgb(216, 6, 6);
+}
 
 #container {
   width: 100%;
@@ -30,7 +34,8 @@ input {
   width: 100%;
 }
 
-button.btnCreate {
+#btnCreate {
+  width: 30%;
   border: 0;
   outline: none;
   font-size: 30px;
@@ -41,7 +46,20 @@ button.btnCreate {
   cursor: pointer;
   border-radius: 10px;
 }
-button.btnCreate:hover {
+#btnCreate:hover {
   color: white;
   background: orange;
+}
+
+.warn_text {
+  visibility: hidden;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ef4444;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+#btnCreate:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

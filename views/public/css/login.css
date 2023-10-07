@@ -89,8 +89,6 @@ a {
   margin-bottom: 1rem;
 }
 #myLogin:disabled {
-  /* 버튼의 투명도 설정 (0일수록 투명, 1일수록 불투명) */
   opacity: 0.5;
-  /* 버튼이 마우스 이벤트를 받지 못하게 처리 */
   pointer-events: none;
 }

@@ -9,6 +9,9 @@
   <body>
     <div id="container">
       <div id="root">
+        <h1><a href="/">SHARP</a></h1>
+        <br />
+        <br />
         <h2>회원가입</h2>
         <form method="post" action="/users/userCreate">
           <table>
@@ -20,20 +23,89 @@
             </tr>
             <tr>
               <td>* 이메일</td>
-              <td colspan="3"><input type="text" name="userEmail" /></td>
+              <td colspan="3">
+                <input
+                  type="text"
+                  name="userEmail"
+                  id="myId"
+                  onblur="printEmail()"
+                />
+                <span id="email_check" class="warn_text"
+                  >유요한 이메일 주소를 입력해주세요.</span
+                >
+              </td>
             </tr>
             <tr>
               <td>* 비밀번호</td>
-              <td colspan="3"><input type="password" name="userPassword" /></td>
+              <td colspan="3">
+                <input
+                  type="password"
+                  name="userPassword"
+                  id="myPW"
+                  onblur="printPw()"
+                />
+                <span id="pw_check" class="warn_text">
+                  6~15자 이내로 입력하세요.</span
+                >
+              </td>
             </tr>
             <tr>
               <td>* 생년월일</td>
               <td colspan="3"><input type="text" name="userBirth" /></td>
             </tr>
           </table>
-          <button class="btnCreate">회원등록</button>
+          <input type="submit" value="회원등록" id="btnCreate" />
         </form>
       </div>
     </div>
+    <script>
+      function printEmail() {
+        const email = document.getElementById("myId");
+        const email_check = document.getElementById("email_check");
+
+        if (!isEmail(email.value)) {
+          email.style.borderColor = "#EF444";
+          email_check.style.visibility = "visible";
+        } else {
+          email.style.borderColor = "#9CA3AF";
+          email_check.style.visibility = "hidden";
+
+          btnCheck();
+        }
+      }
+
+      function isEmail(asValue) {
+        let regExp =
+          // '@' 포함여부와 대문자,소문자를 구분하지않게 표현식끝에 i 사용
+          /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+        return regExp.test(asValue);
+      }
+
+      function printPw() {
+        const pw = document.getElementById("myPW");
+        const pw_check = document.getElementById("pw_check");
+
+        if (pw.value.length < 6 || pw.value.length > 15) {
+          pw.style.borderColor = "#EF4444";
+          pw_check.style.visibility = "visible";
+        } else {
+          pw.style.borderColor = "#9CA3AF";
+          pw_check.style.visibility = "hidden";
+        }
+        btnCheck();
+      }
+
+      function btnCheck() {
+        const email = document.getElementById("myId").value;
+        const pw = document.getElementById("myPW");
+        const login_btn = document.getElementById("btnCreate");
+        if (isEmail(email) && pw.value.length >= 6 && pw.value.length <= 15) {
+          login_btn.disabled = false;
+        } else {
+          login_btn.disabled = true;
+        }
+      }
+    </script>
   </body>
 </html>
