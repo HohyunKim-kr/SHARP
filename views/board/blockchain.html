@@ -34,21 +34,33 @@
       <div id="pageInfo">
         <div id="lnb">
           <h2>Comment</h2>
-          <ul class="comment">
-            <li class="commentForm">
-              <form id="commentFrm" action="">
-                <span class="ps_box">
-                  <input
-                    type="text"
-                    placeholder="댓글을 입력 해주세요"
-                    class="int"
-                    name="content"
-                  />
-                </span>
-                <input type="submit" class="commentBtn" value="등록" />
-              </form>
+          <ul class="Comment">
+            <li class="box_w">
+              <div id="recent-reply">
+                <div class="group-tit">
+                  <h4 class="tcol-t">최근댓글</h4>
+                </div>
+                <ul
+                  class="group-list"
+                  id="first-reply-page"
+                  style="display: block"
+                >
+                  <li>
+                    <div class="ball">
+                      <img
+                        src="https://ssl.pstatic.net/static/cafe/cafe_pc/ico-blank.png"
+                        alt="tcol-c"
+                        width="3"
+                        height="3"
+                      />
+                      <a href="" class="tcol-c tlink" onclick="targetCleaner()">
+                        <div class="ellipsis tcol-c">댓글 1</div></a
+                      >
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li id="commentList"></li>
           </ul>
         </div>
         <div id="roadMap">
