@@ -191,6 +191,11 @@
         const numPages = Math.ceil(data.length / pageSize);
         createPageList(numPages);
       }
+      // 페이지 목록 생성
+      createPageList(Math.ceil(data.length / pageSize));
+
+      // 테이블 렌더링
+      renderTable();
     </script>
   </body>
 </html>
