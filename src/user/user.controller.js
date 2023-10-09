@@ -57,25 +57,25 @@ exports.getuserInfo = (req, res) => {
   res.render("board/getuserInfo.html", { user: req.user });
 };
 
-// exports.getModifyuserinfo = (req, res) => {
-//   res.render("board/getModifyuserinfo.html", { user: req.user });
-// };
+exports.getModifyuserinfo = (req, res) => {
+  res.render("board/getModifyuserinfo.html", { user: req.user });
+};
 
-// exports.postModifyuserinfo = async (req, res, next) => {
-//   try {
-//     const userChecked = req.user ? req.user : undefined;
-//     const { userEmail, userPassword, userName, userBirth, userNickname } =
-//       req.body;
-//     const createUser = await userService.postModifyuserinfo(
-//       userChecked,
-//       userEmail,
-//       userPassword,
-//       userName,
-//       userBirth,
-//       userNickname
-//     );
-//     res.redirect("/");
-//   } catch (e) {
-//     next(e);
-//   }
-// };
+exports.postModifyuserinfo = async (req, res, next) => {
+  try {
+    const userChecked = req.user ? req.user : undefined;
+    const { userEmail, userPassword, userName, userBirth, userNickname } =
+      req.body;
+    const createUser = await userService.postModifyuserinfo(
+      userChecked,
+      userEmail,
+      userPassword,
+      userName,
+      userBirth,
+      userNickname
+    );
+    res.redirect("/");
+  } catch (e) {
+    next(e);
+  }
+};

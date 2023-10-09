@@ -49,26 +49,26 @@ exports.findOneByUserId = async (userId) => {
   }
 };
 
-// exports.postModifyuserinfo = async (
-//   userChecked,
-//   userEmail,
-//   userPassword,
-//   userName,
-//   userBirth,
-//   userNickname
-// ) => {
-//   try {
-//     const result = await userRepository.modifyUserinfo(
-//       userChecked,
-//       userEmail,
-//       userPassword,
-//       userName,
-//       userBirth,
-//       userNickname
-//     );
-//     if (!result) return;
-//     return;
-//   } catch (e) {
-//     console.log("service postmodify err" + e.message);
-//   }
-// };
+exports.postModifyuserinfo = async (
+  userChecked,
+  userEmail,
+  userPassword,
+  userName,
+  userBirth,
+  userNickname
+) => {
+  try {
+    const result = await userRepository.modifyUserinfo(
+      userChecked,
+      userEmail,
+      userPassword,
+      userName,
+      userBirth,
+      userNickname
+    );
+    if (!result) return;
+    return;
+  } catch (e) {
+    console.log("service postmodify err" + e.message);
+  }
+};
