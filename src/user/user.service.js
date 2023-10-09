@@ -8,9 +8,10 @@ exports.postLogin = async (userEmail, userPassword) => {
       userEmail,
       userPassword
     );
+    console.log(result);
     if (!result) return { isLogin: false, data: null };
 
-    const token = jwt.sign({ id: result.userEmail });
+    const token = jwt.sign({ Email: result.userEmail, id: result.userId });
     return { isLogin: true, data: token };
   } catch (e) {
     throw new Error("Service Error" + e.message);
@@ -39,11 +40,35 @@ exports.postUsercreate = async (
   }
 };
 
-exports.findOneByUserId = async (userEmail) => {
+exports.findOneByUserId = async (userId) => {
   try {
-    const result = await userRepository.findOne("userEmail", userEmail);
+    const result = await userRepository.findOne("userId", userId);
     return result;
   } catch (e) {
     throw new Error("servcie err", e.message);
   }
 };
+
+// exports.postModifyuserinfo = async (
+//   userChecked,
+//   userEmail,
+//   userPassword,
+//   userName,
+//   userBirth,
+//   userNickname
+// ) => {
+//   try {
+//     const result = await userRepository.modifyUserinfo(
+//       userChecked,
+//       userEmail,
+//       userPassword,
+//       userName,
+//       userBirth,
+//       userNickname
+//     );
+//     if (!result) return;
+//     return;
+//   } catch (e) {
+//     console.log("service postmodify err" + e.message);
+//   }
+// };

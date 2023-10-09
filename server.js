@@ -19,6 +19,8 @@ app.use(middleware.auth);
 
 app.use(router);
 
+app.use((err, req, res, next) => {});
+
 app.listen(3000, async () => {
   console.log(`server start`);
   try {
