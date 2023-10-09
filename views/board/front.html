@@ -86,7 +86,7 @@
                 <th scope="cols">추천수</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tbody">
               {% set list = data %} {% for row in list %}
               <tr>
                 <th scope="row">{{row.Num}}</th>
@@ -118,8 +118,79 @@
               </tr>
             </tbody>
           </table>
+          <div id="paging">
+            <button id="prev" class="button cyan_mini">이전</button>
+            <span id="pages"></span>
+            <button id="next" class="button cyan_mini">다음</button>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      const pageSize = 7;
+
+      // 현재 페이지 번호
+      let pageNumber = 1;
+
+      // 페이지 목록 생성
+      function createPageList(numPages) {
+        const pagingElement = document.querySelector("#paging");
+        pagingElement.innerHTML = "";
+
+        for (let i = 1; i <= numPages; i++) {
+          const liElement = document.createElement("li");
+          liElement.textContent = i;
+          liElement.addEventListener("click", () => {
+            pageNumber = i;
+            renderTable();
+          });
+
+          if (i === pageNumber) {
+            liElement.classList.add("active");
+          }
+
+          pagingElement.appendChild(liElement);
+        }
+        if (numPages > 7) {
+          const pagingMoreElement = document.createElement("li");
+          pagingMoreElement.textContent = "...";
+          pagingElement.appendChild(pagingMoreElement);
+        }
+      }
+
+      // 테이블 렌더링
+      function renderTable() {
+        const tbodyElement = document.querySelector("#tbody");
+        tbodyElement.innerHTML = "";
+
+        const start = (pageNumber - 1) * pageSize;
+        const end = start + pageSize;
+
+        for (let i = start; i < end && i < data.length; i++) {
+          const row = data[i];
+
+          const trElement = document.createElement("tr");
+          trElement.innerHTML = `
+      <th scope="row">${row.Num}</th>
+      <td><a href="/boards/myView?id=${row.boardId}">${row.title}</a></td>
+      <td>{{row.created_at}}</td>
+      <td>{{row.userNickname}}</td>
+      <td>{{row.views}}</td>
+      <td>{{row.likes}}</td>
+    `;
+
+          tbodyElement.appendChild(trElement);
+        }
+
+        const prevButton = document.querySelector("#prev");
+        prevButton.disabled = pageNumber === 1;
+
+        const nextButton = document.querySelector("#next");
+        nextButton.disabled = end >= data.length;
+
+        const numPages = Math.ceil(data.length / pageSize);
+        createPageList(numPages);
+      }
+    </script>
   </body>
 </html>
