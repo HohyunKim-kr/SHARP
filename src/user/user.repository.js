@@ -7,7 +7,7 @@ exports.findOneByUserInfo = async (user_Email, user_Password) => {
     // const sql = `SELECT userEmail,userPassword FROM users`;
     // const [[result]] = await pool.query(sql);
     const [[result]] = await pool.query(sql, [user_Email, user_Password]);
-    // console.log(result + "finone");
+    console.log(result + "finone");
 
     return result;
   } catch (err) {
@@ -46,3 +46,28 @@ exports.createUserInfo = async (
     console.log("user repo err", e.message);
   }
 };
+
+// exports.modifyUserinfo = async (
+//   userChecked,
+//   userEmail,
+//   userPassword,
+//   userName,
+//   userBirth,
+//   userNickname
+// ) => {
+//   try {
+//     if (!userChecked) throw new Error("Notoken");
+//     const sql = `UPDATE users SET userEmail=?,userPassword=?,userName=?,userBirth=?,userNickname=? where userId=?`;
+//     const [result] = await pool.query(sql, [
+//       userEmail,
+//       userPassword,
+//       userName,
+//       userBirth,
+//       userNickname,
+//       userChecked.userId,
+//     ]);
+//     return result;
+//   } catch (e) {
+//     console.log("user repo modifyuser err", e.message);
+//   }
+// };
