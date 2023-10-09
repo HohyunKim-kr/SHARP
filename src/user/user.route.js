@@ -18,9 +18,9 @@ router.get("/getuserInfo", userController.getuserInfo);
 
 // 회원정보 유저삭제, 유저정보수정
 // update
-// router.get("/modifyUserinfo", userController.getModifyuserinfo);
-// router.post("/modifyUserinfo", userController.postModifyuserinfo);
+router.get("/getModifyuserinfo", userController.getModifyuserinfo);
+router.post("/getModifyuserinfo", userController.postModifyuserinfo);
 
 // delete
-// router.get("/deleteUser",userController.getDeleteuser);
+// router.get("/deleteUser", userController.getDeleteuser);
 module.exports = router;
