@@ -23,8 +23,12 @@ exports.getWriteboard = (req, res) => {
 
 exports.postWriteboard = async (req, res, next) => {
   try {
+    const user = req.user;
+    if (user == undefined) {
+      throw new Error();
+    }
     const { title, content } = req.body;
-    const createBoard = await boardService.postWriteboard(title, content);
+    const createBoard = await boardService.postWriteboard(title, content, user);
     res.redirect("/boards/front");
   } catch (e) {
     next(e);
@@ -45,12 +49,21 @@ exports.getmyView = async (req, res, next) => {
   }
 };
 
-exports.getModify = (req, res) => {
-  const id = req.query.id;
-  console.log("@: ", id);
-  res.render("board/modify.html", {
-    id: id,
-  });
+exports.getModify = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const id = req.query.id;
+    if (user == undefined) {
+      throw new Error();
+    }
+    const getModify = await boardService.getModify(user.userId, id);
+    console.log("@: ", id);
+    res.render("board/modify.html", {
+      id: id,
+    });
+  } catch (e) {
+    next(e);
+  }
 };
 
 exports.postModify = async (req, res, next) => {

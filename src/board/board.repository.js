@@ -1,9 +1,9 @@
 const pool = require("../../pool");
 
-exports.createWriteboard = async (title, content) => {
+exports.createWriteboard = async (title, content, user) => {
   try {
-    const sql = `INSERT INTO frontendBoard(title,content) values(?,?)`;
-    const [result] = await pool.query(sql, [title, content]);
+    const sql = `INSERT INTO frontendBoard(title,content,userId) values(?,?,?)`;
+    const [result] = await pool.query(sql, [title, content, user.userId]);
     return result;
   } catch (e) {
     console.log("board repo err " + e.message);
@@ -27,6 +27,18 @@ exports.findMyview = async (boardId) => {
     return result;
   } catch (e) {
     console.log("repo findmyview err" + e.message);
+  }
+};
+
+exports.userChecked = async (userId, id) => {
+  try {
+    const sql = `SELECT COUNT(*) FROM frontendBoard where boardId =? AND userId=?`;
+    const [[result]] = await pool.query(sql, [id, userId]);
+    console.log(result["COUNT(*)"]);
+
+    return result["COUNT(*)"];
+  } catch (e) {
+    console.log("repo usercehcked err" + e.message);
   }
 };
 

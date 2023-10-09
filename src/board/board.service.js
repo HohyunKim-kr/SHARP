@@ -1,8 +1,8 @@
 const boardRepository = require("./board.repository");
 
-exports.postWriteboard = async (title, content) => {
+exports.postWriteboard = async (title, content, user) => {
   try {
-    const result = await boardRepository.createWriteboard(title, content);
+    const result = await boardRepository.createWriteboard(title, content, user);
     if (!result) return;
     return;
   } catch (e) {
@@ -28,6 +28,17 @@ exports.getmyView = async (boardId) => {
     return result;
   } catch (e) {
     console.log("service getmyview err" + e.message);
+  }
+};
+
+exports.getModify = async (userId, id) => {
+  try {
+    const result = await boardRepository.userChecked(userId, id);
+    if (!result) throw new Error();
+    console.log("userchecked" + result);
+    return result;
+  } catch (e) {
+    throw new Error("service getmodify" + e.message);
   }
 };
 
