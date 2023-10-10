@@ -80,7 +80,11 @@
       <div id="rootComment">
         <ul class="comment">
           <li class="commentForm">
-            <form id="commentFrm" action="">
+            <form
+              id="commentFrm"
+              method="post"
+              action="/comments/myView?id={{board.boardId}}"
+            >
               <span class="ps_box">
                 {% if user %}
                 <p>{{user.userNickname}}님</p>
@@ -89,7 +93,7 @@
                   type="text"
                   placeholder="댓글을 입력 해주세요"
                   class="int"
-                  name="content"
+                  name="comment"
                   cols="100"
                 ></textarea>
                 <input type="submit" class="commentBtn" value="등록" />
