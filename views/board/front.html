@@ -53,9 +53,18 @@
                         width="3"
                         height="3"
                       />
-                      <a href="" class="tcol-c tlink" onclick="targetCleaner()">
-                        <div class="ellipsis tcol-c">댓글 1</div></a
-                      >
+                      <div class="frontComment">
+                        {% for row in comment%}
+
+                        <a
+                          href="/boards/myView?id={{row.boardId}}"
+                          class="tcol-c tlink"
+                        >
+                          <div class="ellipsis tcol-c">{{row.comment}}</div>
+                        </a>
+
+                        {% endfor %}
+                      </div>
                     </div>
                   </li>
                 </ul>
@@ -89,12 +98,12 @@
             <tbody id="tbody">
               {% set list = data %} {% for row in list %}
               <tr>
-                <th scope="row">{{row.Num}}</th>
+                <th scope="row">{{row.boardId}}</th>
                 <td>
                   <a href="/boards/myView?id={{row.boardId}}">{{row.title}}</a>
                 </td>
                 <td>{{row.created_at}}</td>
-                <td>{{row.userNickname}}</td>
+                <td>{{row.userId}}</td>
                 <td>{{row.views}}</td>
                 <td>{{row.likes}}</td>
               </tr>

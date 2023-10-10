@@ -10,6 +10,17 @@ exports.postWriteboard = async (title, content, user) => {
   }
 };
 
+exports.getCommentList = async () => {
+  try {
+    const result = await boardRepository.findAllcommentlist();
+    // console.log(result);
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("getCommentList service err" + e.message);
+  }
+};
+
 exports.getFrontendboard = async () => {
   try {
     const result = await boardRepository.frontendboardList();

@@ -206,3 +206,11 @@ a.button {
 .cyan_mini {
   display: inline-block;
 }
+
+.frontComment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}

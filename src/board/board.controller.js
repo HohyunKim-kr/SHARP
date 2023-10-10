@@ -2,9 +2,16 @@ const boardService = require("./board.service");
 
 exports.getFront = async (req, res, next) => {
   try {
+    const userData = req.user;
+    const getmyViewpage = await boardService.getCommentList();
+    console.log(getmyViewpage);
     const getfrontList = await boardService.getFrontendboard();
     // console.log(getfrontList);
-    res.render("board/front.html", { data: getfrontList });
+    res.render("board/front.html", {
+      data: getfrontList,
+      userData: userData,
+      comment: getmyViewpage,
+    });
   } catch (e) {
     next(e);
   }

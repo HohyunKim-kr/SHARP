@@ -10,9 +10,20 @@ exports.createWriteboard = async (title, content, user) => {
   }
 };
 
+exports.findAllcommentlist = async () => {
+  try {
+    const sql = `SELECT * FROM commentsList`;
+    const [result] = await pool.query(sql);
+    // console.log(result);
+    return result;
+  } catch (e) {
+    console.log("ffb err" + e.message);
+  }
+};
+
 exports.frontendboardList = async () => {
   try {
-    const sql = `SELECT title, created_at, boardId FROM frontendBoard`;
+    const sql = `SELECT * FROM frontendBoard`;
     const [result] = await pool.query(sql);
     return result;
   } catch (e) {
@@ -22,7 +33,7 @@ exports.frontendboardList = async () => {
 
 exports.findMyview = async (boardId) => {
   try {
-    const sql = `SELECT boardId, title, writer, content, created_at, category FROM frontendBoard where boardId = ?`;
+    const sql = `SELECT boardId, title, writer, content, created_at FROM frontendBoard where boardId = ?`;
     const [[result]] = await pool.query(sql, [boardId]);
     return result;
   } catch (e) {
