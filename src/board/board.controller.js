@@ -3,6 +3,7 @@ const boardService = require("./board.service");
 exports.getFront = async (req, res, next) => {
   try {
     const getfrontList = await boardService.getFrontendboard();
+    // console.log(getfrontList);
     res.render("board/front.html", { data: getfrontList });
   } catch (e) {
     next(e);

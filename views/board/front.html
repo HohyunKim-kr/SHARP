@@ -191,89 +191,95 @@
       </div>
     </div>
     <script>
-      const data = [
-        {
-          userId: 1,
-          title: `<p>{{board.title}}</p>`,
-          created_at: `<p>{{board.created_at}}</p>`,
-          boardId: 1,
-          title: "제목1",
-          writer: "작성자1",
-          content: "내용1",
-        },
-        {
-          userId: 2,
-          category: "게임",
-          boardId: 2,
-          title: "제목2",
-          writer: "작성자2",
-          content: "내용2",
-          created_at: "2023-07-21T00:00:00",
-        },
-        {
-          userId: 3,
-          category: "영화",
-          boardId: 3,
-          title: "제목3",
-          writer: "작성자3",
-          content: "내용3",
-          created_at: "2023-07-22T00:00:00",
-        },
-        {
-          userId: 4,
-          category: "음악",
-          boardId: 4,
-          title: "제목4",
-          writer: "작성자4",
-          content: "내용4",
-          created_at: "2023-07-23T00:00:00",
-        },
-        {
-          userId: 5,
-          category: "스포츠",
-          boardId: 5,
-          title: "제목5",
-          writer: "작성자5",
-          content: "내용5",
-          created_at: "2023-07-24T00:00:00",
-        },
-        {
-          userId: 6,
-          category: "스포츠",
-          boardId: 6,
-          title: "제목6",
-          writer: "작성자6",
-          content: "내용5",
-          created_at: "2023-07-24T00:00:00",
-        },
-        {
-          userId: 7,
-          category: "스포츠",
-          boardId: 7,
-          title: "제목7",
-          writer: "작성자7",
-          content: "내용5",
-          created_at: "2023-07-24T00:00:00",
-        },
-        {
-          userId: 8,
-          category: "스포츠",
-          boardId: 8,
-          title: "제목8",
-          writer: "작성자8",
-          content: "내용5",
-          created_at: "2023-07-24T00:00:00",
-        },
-        {
-          userId: 9,
-          category: "스포츠",
-          boardId: 8,
-          title: "제목9",
-          writer: "작성자9",
-          content: "내용9",
-          created_at: "2023-07-24T00:00:00",
-        },
-      ];
+      // const data = [
+      //   {
+      //     userId: 1,
+      //     title: `<p>{{board.title}}</p>`,
+      //     created_at: `<p>{{board.created_at}}</p>`,
+      //     boardId: 1,
+      //     title: "제목1",
+      //     writer: "작성자1",
+      //     content: "내용1",
+      //   },
+      //   {
+      //     userId: 2,
+      //     category: "게임",
+      //     boardId: 2,
+      //     title: "제목2",
+      //     writer: "작성자2",
+      //     content: "내용2",
+      //     created_at: "2023-07-21T00:00:00",
+      //   },
+      //   {
+      //     userId: 3,
+      //     category: "영화",
+      //     boardId: 3,
+      //     title: "제목3",
+      //     writer: "작성자3",
+      //     content: "내용3",
+      //     created_at: "2023-07-22T00:00:00",
+      //   },
+      //   {
+      //     userId: 4,
+      //     category: "음악",
+      //     boardId: 4,
+      //     title: "제목4",
+      //     writer: "작성자4",
+      //     content: "내용4",
+      //     created_at: "2023-07-23T00:00:00",
+      //   },
+      //   {
+      //     userId: 5,
+      //     category: "스포츠",
+      //     boardId: 5,
+      //     title: "제목5",
+      //     writer: "작성자5",
+      //     content: "내용5",
+      //     created_at: "2023-07-24T00:00:00",
+      //   },
+      //   {
+      //     userId: 6,
+      //     category: "스포츠",
+      //     boardId: 6,
+      //     title: "제목6",
+      //     writer: "작성자6",
+      //     content: "내용5",
+      //     created_at: "2023-07-24T00:00:00",
+      //   },
+      //   {
+      //     userId: 7,
+      //     category: "스포츠",
+      //     boardId: 7,
+      //     title: "제목7",
+      //     writer: "작성자7",
+      //     content: "내용5",
+      //     created_at: "2023-07-24T00:00:00",
+      //   },
+      //   {
+      //     userId: 8,
+      //     category: "스포츠",
+      //     boardId: 8,
+      //     title: "제목8",
+      //     writer: "작성자8",
+      //     content: "내용5",
+      //     created_at: "2023-07-24T00:00:00",
+      //   },
+      //   {
+      //     userId: 9,
+      //     category: "스포츠",
+      //     boardId: 8,
+      //     title: "제목9",
+      //     writer: "작성자9",
+      //     content: "내용9",
+      //     created_at: "2023-07-24T00:00:00",
+      //   },
+      // ];
+
+      const boardList = [];
+      const literal = `{% for value in data %}{{value}}{% endfor %}`;
+      boardList.push(literal);
+      console.log(literal);
+      console.log(boardList);
 
       const pageSize = 7;
 
@@ -306,19 +312,19 @@
         tbodyElement.innerHTML = "";
 
         const start = (pageNumber - 1) * pageSize;
-        const end = Math.min(start + pageSize, data.length);
+        const end = Math.min(start + pageSize, boardList.length);
 
-        for (let i = start; i < end && i < data.length; i++) {
-          const row = data[i];
+        for (let i = start; i < end && i < boardList.length; i++) {
+          const row = boardList[i];
           const trElement = document.createElement("tr");
           trElement.innerHTML = `
-      <th scope="row">${row.Num}</th>
-      <td><a href="/boards/myView?id=${row.boardId}">${row.title}</a></td>
-      <td>{{row.created_at}}</td>
-      <td>{{row.userNickname}}</td>
-      <td>{{row.views}}</td>
-      <td>{{row.likes}}</td>
-    `;
+        <th scope="row">${row.Num}</th>
+        <td><a href="/boards/myView?id=${row.boardId}">${row.title}</a></td>
+        <td>{{row.created_at}}</td>
+        <td>{{row.userNickname}}</td>
+        <td>{{row.views}}</td>
+        <td>{{row.likes}}</td>
+      `;
           tbodyElement.appendChild(trElement);
         }
 
@@ -329,14 +335,15 @@
         prevButton.disabled = pageNumber === 1;
 
         const nextButton = document.querySelector("#next");
-        nextButton.disabled = end >= data.length;
+        nextButton.disabled = end >= boardList.size;
 
-        const numPages = Math.ceil(data.length / pageSize);
+        const numPages = Math.ceil(boardList.length / pageSize);
+        console.log(boardList.length);
         createPageList(numPages);
 
         prevButton.disabled = false;
 
-        if (end < data.length) {
+        if (end < boardList.length) {
           nextButton.disabled = false;
         } else {
           nextButton.disabled = true;
