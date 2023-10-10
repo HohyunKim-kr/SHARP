@@ -77,6 +77,7 @@ exports.postmodifyBoard = async (title, content, boardId) => {
 exports.getDelete = async (boardId, id) => {
   try {
     const isChecked = await boardRepository.userChecked(boardId, id);
+    console.log(isChecked);
     if (!isChecked) throw new Error();
     const result = await boardRepository.deleteBoard(boardId);
     if (!result) return;

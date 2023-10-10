@@ -97,7 +97,7 @@ exports.getDelete = async (req, res, next) => {
       throw new Error();
     }
     const boardId = req.query.id;
-    const deleteBoard = await boardService.getDelete(boardId);
+    const deleteBoard = await boardService.getDelete(boardId, user.userId);
     res.redirect("/boards/front");
   } catch (e) {
     next(e);

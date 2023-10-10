@@ -54,8 +54,9 @@ exports.findcommentsList = async (boardId) => {
 
 exports.userChecked = async (userId, id) => {
   try {
-    const sql = `SELECT COUNT(*) FROM frontendBoard where boardId =? AND userId=?`;
-    const [[result]] = await pool.query(sql, [id, userId]);
+    // console.log(userId, id);
+    const sql = `SELECT COUNT(*) FROM frontendBoard where userId =? AND boardId=?`;
+    const [[result]] = await pool.query(sql, [userId, id]);
     console.log(result["COUNT(*)"]);
 
     return result["COUNT(*)"];
