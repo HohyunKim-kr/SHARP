@@ -15,6 +15,7 @@ router.get("/logout", userController.getLogout);
 
 // read
 router.get("/getuserInfo", userController.getuserInfo);
+router.get("/commentList", userController.getCommentList);
 
 // 회원정보 유저삭제, 유저정보수정
 // update

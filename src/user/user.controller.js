@@ -57,6 +57,20 @@ exports.getuserInfo = (req, res) => {
   res.render("board/getuserInfo.html", { user: req.user });
 };
 
+exports.getCommentList = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const getCommentList = await userService.getCommentList(user.userId);
+    console.log(getCommentList);
+    res.render("board/commentList.html", {
+      user: req.user,
+      comment: getCommentList,
+    });
+  } catch (e) {
+    next(e);
+  }
+};
+
 exports.getModifyuserinfo = (req, res) => {
   res.render("board/getModifyuserinfo.html", { user: req.user });
 };
