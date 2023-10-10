@@ -72,3 +72,12 @@ exports.postModifyuserinfo = async (
     console.log("service postmodify err" + e.message);
   }
 };
+
+exports.getDeleteuser = async (userId) => {
+  try {
+    const result = await userRepository.deleteUser(userId);
+    if (!result) return;
+  } catch (e) {
+    console.log("service getDeleteuser err" + e.message);
+  }
+};

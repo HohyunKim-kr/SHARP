@@ -22,5 +22,5 @@ router.get("/getModifyuserinfo", userController.getModifyuserinfo);
 router.post("/getModifyuserinfo", userController.postModifyuserinfo);
 
 // delete
-// router.get("/deleteUser", userController.getDeleteuser);
+router.get("/deleteUser", userController.getDeleteuser);
 module.exports = router;
