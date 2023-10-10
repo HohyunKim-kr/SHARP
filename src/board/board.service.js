@@ -31,15 +31,15 @@ exports.getmyView = async (userId) => {
   }
 };
 
-exports.getAllusernickname = async (boardId) => {
-  try {
-    const result = await boardRepository.findAllusernickname(boardId);
-    if (!result) return;
-    return result;
-  } catch (e) {
-    console.log("service getAllusernickname err" + e.message);
-  }
-};
+// exports.getAllusernickname = async (boardId) => {
+//   try {
+//     const result = await boardRepository.findAllusernickname(boardId);
+//     if (!result) return;
+//     return result;
+//   } catch (e) {
+//     console.log("service getAllusernickname err" + e.message);
+//   }
+// };
 
 exports.getComments = async (boardId) => {
   try {

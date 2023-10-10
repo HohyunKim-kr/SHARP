@@ -41,19 +41,23 @@ exports.postWriteboard = async (req, res, next) => {
 
 exports.getmyView = async (req, res, next) => {
   try {
+    // if (req.user == undefined) {
+    //   res.render("board/myView.html");
+    // }
     const boardId = req.query.id;
     const userData = req.user;
     const getmyViewpage = await boardService.getmyView(boardId);
-    const allUsernickname = await boardService.getAllusernickname(
-      userData.userId
-    );
-    console.log(allUsernickname);
+    // const allUsernickname = await boardService.getAllusernickname(
+    //   // userData.userId
+    //   boardId
+    // );
+    // console.log(allUsernickname);
     const getCommentsList = await boardService.getComments(boardId);
     res.render("board/myView.html", {
       comments: getCommentsList,
       board: getmyViewpage,
       user: userData,
-      allNick: allUsernickname,
+      // allNick: allUsernickname,
     });
   } catch (e) {
     next(e);

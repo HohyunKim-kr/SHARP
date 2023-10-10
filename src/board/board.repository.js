@@ -30,22 +30,22 @@ exports.findMyview = async (boardId) => {
   }
 };
 
-exports.findAllusernickname = async (userId) => {
-  try {
-    const sql = `SELECT userNickname FROM users where userId=?`;
-    const [[result]] = await pool.query(sql, [userId]);
-    console.log(result);
-    return result;
-  } catch (e) {
-    console.log("repo findAllusernickname err" + e.message);
-  }
-};
+// exports.findAllusernickname = async (boardId) => {
+//   try {
+//     const sql = `SELECT userNickname FROM users where boardId=?`;
+//     const [[result]] = await pool.query(sql, [boardId]);
+//     // console.log(result);
+//     return result;
+//   } catch (e) {
+//     console.log("repo findAllusernickname err" + e.message);
+//   }
+// };
 
 exports.findcommentsList = async (boardId) => {
   try {
-    const sql = `SELECT comment, userId FROM commentsList where boardId=?`;
+    const sql = `SELECT userNickname, comment FROM commentsList JOIN users ON commentsList.userId = users.userId where boardId=?`;
     const [result] = await pool.query(sql, [boardId]);
-    // console.log(result);
+    console.log("결과!! : ", result);
     return result;
   } catch (e) {
     console.log("repo findComment err" + e.message);
