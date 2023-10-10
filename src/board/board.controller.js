@@ -85,6 +85,10 @@ exports.postModify = async (req, res, next) => {
 
 exports.getDelete = async (req, res, next) => {
   try {
+    const user = req.user;
+    if (user == undefined) {
+      throw new Error();
+    }
     const boardId = req.query.id;
     const deleteBoard = await boardService.getDelete(boardId);
     res.redirect("/boards/front");

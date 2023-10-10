@@ -54,9 +54,12 @@ exports.postmodifyBoard = async (title, content, boardId) => {
   }
 };
 
-exports.getDelete = async (boardId) => {
+exports.getDelete = async (boardId, id) => {
   try {
-    const result = boardRepository.deleteBoard(boardId);
+    const isChecked = await boardRepository.userChecked(boardId, id);
+    console.log(typeof isChecked);
+    if (!isChecked) throw new Error();
+    const result = await boardRepository.deleteBoard(boardId);
     if (!result) return;
   } catch (e) {
     console.log("service geteDelte err" + e.message);
