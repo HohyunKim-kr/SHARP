@@ -190,13 +190,93 @@
         </div>
       </div>
     </div>
-    <!-- <script>
+    <script>
+      const data = [
+        {
+          userId: 1,
+          title: `<p>{{board.title}}</p>`,
+          created_at: `<p>{{board.created_at}}</p>`,
+          boardId: 1,
+          title: "제목1",
+          writer: "작성자1",
+          content: "내용1",
+        },
+        {
+          userId: 2,
+          category: "게임",
+          boardId: 2,
+          title: "제목2",
+          writer: "작성자2",
+          content: "내용2",
+          created_at: "2023-07-21T00:00:00",
+        },
+        {
+          userId: 3,
+          category: "영화",
+          boardId: 3,
+          title: "제목3",
+          writer: "작성자3",
+          content: "내용3",
+          created_at: "2023-07-22T00:00:00",
+        },
+        {
+          userId: 4,
+          category: "음악",
+          boardId: 4,
+          title: "제목4",
+          writer: "작성자4",
+          content: "내용4",
+          created_at: "2023-07-23T00:00:00",
+        },
+        {
+          userId: 5,
+          category: "스포츠",
+          boardId: 5,
+          title: "제목5",
+          writer: "작성자5",
+          content: "내용5",
+          created_at: "2023-07-24T00:00:00",
+        },
+        {
+          userId: 6,
+          category: "스포츠",
+          boardId: 6,
+          title: "제목6",
+          writer: "작성자6",
+          content: "내용5",
+          created_at: "2023-07-24T00:00:00",
+        },
+        {
+          userId: 7,
+          category: "스포츠",
+          boardId: 7,
+          title: "제목7",
+          writer: "작성자7",
+          content: "내용5",
+          created_at: "2023-07-24T00:00:00",
+        },
+        {
+          userId: 8,
+          category: "스포츠",
+          boardId: 8,
+          title: "제목8",
+          writer: "작성자8",
+          content: "내용5",
+          created_at: "2023-07-24T00:00:00",
+        },
+        {
+          userId: 9,
+          category: "스포츠",
+          boardId: 8,
+          title: "제목9",
+          writer: "작성자9",
+          content: "내용9",
+          created_at: "2023-07-24T00:00:00",
+        },
+      ];
+
       const pageSize = 7;
 
-      // 현재 페이지 번호
-      let pageNumber = 1;
-
-      // 페이지 목록 생성
       function createPageList(numPages) {
         const pagingElement = document.querySelector("#paging");
         pagingElement.innerHTML = "";
@@ -208,7 +288,7 @@
             renderTable(i);
           });
 
-          if (i === pageNumber) {
+          if (i === 1) {
             liElement.classList.add("active");
           }
 
@@ -221,20 +301,15 @@
         }
       }
 
-      // 테이블 렌더링
       function renderTable(pageNumber) {
         const tbodyElement = document.querySelector("#tbody");
         tbodyElement.innerHTML = "";
 
         const start = (pageNumber - 1) * pageSize;
-        const end = Math.min(
-          (pageNumber - 1) * pageSize + pageSize,
-          data.length
-        );
+        const end = Math.min(start + pageSize, data.length);
 
-        for (let i = start; i < end; i++) {
+        for (let i = start; i < end && i < data.length; i++) {
           const row = data[i];
-
           const trElement = document.createElement("tr");
           trElement.innerHTML = `
       <th scope="row">${row.Num}</th>
@@ -244,9 +319,11 @@
       <td>{{row.views}}</td>
       <td>{{row.likes}}</td>
     `;
-
           tbodyElement.appendChild(trElement);
         }
+
+        const pagingElement = document.querySelector("#paging");
+        pagingElement.style.display = "block";
 
         const prevButton = document.querySelector("#prev");
         prevButton.disabled = pageNumber === 1;
@@ -256,10 +333,17 @@
 
         const numPages = Math.ceil(data.length / pageSize);
         createPageList(numPages);
+
+        prevButton.disabled = false;
+
+        if (end < data.length) {
+          nextButton.disabled = false;
+        } else {
+          nextButton.disabled = true;
+        }
       }
 
-      // 테이블 렌더링
-      renderTable();
-    </script> -->
+      renderTable(1);
+    </script>
   </body>
 </html>
