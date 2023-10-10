@@ -79,3 +79,14 @@ exports.postModifyuserinfo = async (req, res, next) => {
     next(e);
   }
 };
+
+// delete
+exports.getDeleteuser = async (req, res, next) => {
+  try {
+    const userId = req.user.userId;
+    const deleteUser = await userService.getDeleteuser(userId);
+    this.getLogout(req, res);
+  } catch (e) {
+    next(e);
+  }
+};

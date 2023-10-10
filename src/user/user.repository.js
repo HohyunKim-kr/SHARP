@@ -71,3 +71,14 @@ exports.modifyUserinfo = async (
     console.log("user repo modifyuser err", e.message);
   }
 };
+
+exports.deleteUser = async (userId) => {
+  try {
+    const sql = `DELETE FROM users where userId=?`;
+    const [result] = await pool.query(sql, [userId]);
+    console.log(result + "deleteUser");
+    return result;
+  } catch (e) {
+    console.log("Repo deleteUser err " + e.message);
+  }
+};
