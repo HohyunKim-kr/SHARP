@@ -44,9 +44,16 @@ exports.getmyView = async (req, res, next) => {
     const boardId = req.query.id;
     const userData = req.user;
     const getmyViewpage = await boardService.getmyView(boardId);
+    const allUsernickname = await boardService.getAllusernickname(
+      userData.userId
+    );
+    console.log(allUsernickname);
+    const getCommentsList = await boardService.getComments(boardId);
     res.render("board/myView.html", {
+      comments: getCommentsList,
       board: getmyViewpage,
       user: userData,
+      allNick: allUsernickname,
     });
   } catch (e) {
     next(e);

@@ -100,7 +100,14 @@
               </span>
             </form>
           </li>
-          <li id="commentList"></li>
+          <li id="commentList">
+            <ul>
+              {% for row in comments %}
+              <li>{{row.comment}}</li>
+              <li>{{allNick.userNickname}}</li>
+              {% endfor %}
+            </ul>
+          </li>
         </ul>
       </div>
     </div>

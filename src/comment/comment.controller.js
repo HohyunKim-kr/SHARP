@@ -4,7 +4,6 @@ exports.postCreatecomments = async (req, res, next) => {
   try {
     const userId = req.user.userId;
     const boardId = req.query.id;
-    console.log(boardId);
     if (userId == undefined) {
       throw new Error();
     }
@@ -19,8 +18,3 @@ exports.postCreatecomments = async (req, res, next) => {
     next(e);
   }
 };
-
-// exports.getViewcomments = async = (req, res, next) => {
-//   try {
-//   } catch (e) {}
-// };
