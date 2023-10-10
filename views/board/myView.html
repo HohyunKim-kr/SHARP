@@ -53,25 +53,18 @@
           </div>
           <div class="viewPage">
             <div class="myView">
-              <span
-                >title
-                <p>{{board.title}}</p></span
-              >
-              <span
-                >writer
-                <p>{{board.writer}}</p></span
-              >
+              <div id="boardsTitle">
+                <span> <p class="boards bd1">front{{board.category}}</p></span>
+                <span> <p class="boards bd2">제목이란{{board.title}}</p></span>
+                <span>
+                  <p class="boards bd3">
+                    sang{{board.writer}} | 45ss45{{board.created_at}}
+                  </p></span
+                >
+              </div>
               <span
                 >content
-                <p>{{board.content}}</p></span
-              >
-              <span
-                >created_at
-                <p>{{board.created_at}}</p></span
-              >
-              <span
-                >category
-                <p>{{board.category}}</p></span
+                <p class="boards bd4">fwf{{board.content}}</p></span
               >
             </div>
           </div>
@@ -101,11 +94,28 @@
             </form>
           </li>
           <li id="commentList">
+            {% for row in comments %}
             <ul>
-              {% for row in comments %}
-              <li>{{row.comment}}</li>
               <li>{{row.userNickname}}</li>
-              {% endfor %}
+              <li>{{row.comment}}</li>
+              <button class="itemDel">
+                <i class="fas fa-minus-circle">삭제</i>
+              </button>
+            </ul>
+            {% endfor %}
+            <ul>
+              <li>fwqf{{row.userNickname}} :</li>
+              <li>fwffw{{row.comment}}</li>
+              <button class="itemDel">
+                <i class="fas fa-minus-circle">삭제</i>
+              </button>
+            </ul>
+            <ul>
+              <li>geg{{row.userNickname}} :</li>
+              <li>fqf{{row.comment}}</li>
+              <button class="itemDel">
+                <i class="fas fa-minus-circle">삭제</i>
+              </button>
             </ul>
           </li>
         </ul>

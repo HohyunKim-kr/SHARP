@@ -96,6 +96,7 @@ td {
 }
 
 .myView {
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,10 +104,23 @@ td {
   border-left: 2px solid black;
 }
 
-span {
-  padding-top: 50px;
-  box-sizing: border-box;
-  border: 1px solid black;
+#boardsTitle {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(101, 96, 96);
+}
+
+.bd1 {
+  padding-right: 100px;
+  font-size: 5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.bd2 {
+  font-size: 50px;
 }
 
 span p {
@@ -114,9 +128,9 @@ span p {
 }
 
 #rootComment {
-  padding: 0;
+  padding-left: 200px;
   margin: 0 auto;
-  width: 900px;
+  width: 1000px;
 }
 
 .comment {
@@ -224,4 +238,29 @@ li {
   background-color: #fff;
   width: 80%;
   height: 400px;
+}
+#commentList ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgb(52, 48, 48);
+}
+
+.itemDel {
+  display: inline-block;
+  padding: 3px;
+  border: none;
+  background-color: #fff;
+}
+
+.itemDel:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.itemDel i {
+  position: relative;
+  left: 100px;
 }
