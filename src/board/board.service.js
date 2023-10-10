@@ -20,14 +20,34 @@ exports.getFrontendboard = async () => {
   }
 };
 
-exports.getmyView = async (boardId) => {
+exports.getmyView = async (userId) => {
   try {
-    const result = await boardRepository.findMyview(boardId);
+    const result = await boardRepository.findMyview(userId);
     if (!result) return;
     // console.log(result);
     return result;
   } catch (e) {
     console.log("service getmyview err" + e.message);
+  }
+};
+
+exports.getAllusernickname = async (boardId) => {
+  try {
+    const result = await boardRepository.findAllusernickname(boardId);
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("service getAllusernickname err" + e.message);
+  }
+};
+
+exports.getComments = async (boardId) => {
+  try {
+    const result = await boardRepository.findcommentsList(boardId);
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("service getComments err" + e.message);
   }
 };
 

@@ -30,6 +30,28 @@ exports.findMyview = async (boardId) => {
   }
 };
 
+exports.findAllusernickname = async (userId) => {
+  try {
+    const sql = `SELECT userNickname FROM users where userId=?`;
+    const [[result]] = await pool.query(sql, [userId]);
+    console.log(result);
+    return result;
+  } catch (e) {
+    console.log("repo findAllusernickname err" + e.message);
+  }
+};
+
+exports.findcommentsList = async (boardId) => {
+  try {
+    const sql = `SELECT comment, userId FROM commentsList where boardId=?`;
+    const [result] = await pool.query(sql, [boardId]);
+    // console.log(result);
+    return result;
+  } catch (e) {
+    console.log("repo findComment err" + e.message);
+  }
+};
+
 exports.userChecked = async (userId, id) => {
   try {
     const sql = `SELECT COUNT(*) FROM frontendBoard where boardId =? AND userId=?`;
