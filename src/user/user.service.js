@@ -40,6 +40,15 @@ exports.postUsercreate = async (
   }
 };
 
+exports.getCommentList = async (userId) => {
+  try {
+    const result = await userRepository.myCommentList(userId);
+    return result;
+  } catch (e) {
+    console.log("getCommentList", e.message);
+  }
+};
+
 exports.findOneByUserId = async (userId) => {
   try {
     const result = await userRepository.findOne("userId", userId);
