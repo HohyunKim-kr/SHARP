@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const boardRouter = require("./board/board.route");
 const userRouter = require("./user/user.route");
+const commentRouter = require("./comment/comment.route");
 
 router.get("/", (req, res) => {
   // console.log("!!!!!!");
@@ -11,5 +12,6 @@ router.get("/", (req, res) => {
 
 router.use("/boards", boardRouter);
 router.use("/users", userRouter);
+// router.user("/comments", commentRouter);
 
 module.exports = router;
