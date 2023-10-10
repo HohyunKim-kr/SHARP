@@ -116,6 +116,70 @@
                 <td>조회수</td>
                 <td>추천수</td>
               </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
+              <tr>
+                <th scope="row">no.999</th>
+                <td><a href="/boards/myView">제목2</a></td>
+                <td>시간</td>
+                <td>닉네임</td>
+                <td>조회수</td>
+                <td>추천수</td>
+              </tr>
             </tbody>
           </table>
           <div id="paging">
@@ -141,8 +205,7 @@
           const liElement = document.createElement("li");
           liElement.textContent = i;
           liElement.addEventListener("click", () => {
-            pageNumber = i;
-            renderTable();
+            renderTable(i);
           });
 
           if (i === pageNumber) {
@@ -159,14 +222,17 @@
       }
 
       // 테이블 렌더링
-      function renderTable() {
+      function renderTable(pageNumber) {
         const tbodyElement = document.querySelector("#tbody");
         tbodyElement.innerHTML = "";
 
         const start = (pageNumber - 1) * pageSize;
-        const end = start + pageSize;
+        const end = Math.min(
+          (pageNumber - 1) * pageSize + pageSize,
+          data.length
+        );
 
-        for (let i = start; i < end && i < data.length; i++) {
+        for (let i = start; i < end; i++) {
           const row = data[i];
 
           const trElement = document.createElement("tr");
@@ -191,8 +257,6 @@
         const numPages = Math.ceil(data.length / pageSize);
         createPageList(numPages);
       }
-      // 페이지 목록 생성
-      createPageList(Math.ceil(data.length / pageSize));
 
       // 테이블 렌더링
       renderTable();
