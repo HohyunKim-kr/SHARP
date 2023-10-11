@@ -112,6 +112,7 @@ exports.getDeletelike = async (req, res, next) => {
 exports.getModify = async (req, res, next) => {
   try {
     const user = req.user;
+    console.log("user", user);
     const id = req.query.id;
     if (user == undefined) {
       throw new Error();
@@ -148,7 +149,7 @@ exports.getDelete = async (req, res, next) => {
     const boardId = req.query.id;
     console.log(boardId);
     console.log(user.userId);
-    const deleteBoard = await boardService.getDelete(boardId, user.userId);
+    const deleteBoard = await boardService.getDelete(user.userId, boardId);
     res.redirect("/boards/front");
   } catch (e) {
     next(e);

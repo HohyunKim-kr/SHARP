@@ -43,7 +43,7 @@ exports.findMyview = async (boardId) => {
 
 exports.viewIncrement = async (boardId) => {
   try {
-    console.log(boardId);
+    // console.log(boardId);
     const sql = `UPDATE frontendBoard SET views=views+1 WHERE boardId = ?`;
     const [result] = await pool.query(sql, [boardId]);
     return result;
@@ -56,7 +56,7 @@ exports.checkedLikes = async (boardId, userId) => {
   try {
     const sql = `SELECT * FROM likes where boardId=? AND userId=?`;
     const [result] = await pool.query(sql, [boardId, userId]);
-    console.log("checkedlikes", result);
+    // console.log("checkedlikes", result);
     return result;
   } catch (e) {
     console.log("repo likeIncrement err", e.message);
@@ -115,11 +115,11 @@ exports.findcommentsList = async (boardId) => {
   }
 };
 
-exports.userChecked = async (id, userId) => {
+exports.userChecked = async (userId, id) => {
   try {
     // console.log(userId, id);
-    const sql = `SELECT COUNT(*) FROM frontendBoard where boardId=? AND userId =?`;
-    const [[result]] = await pool.query(sql, [id, userId]);
+    const sql = `SELECT COUNT(*) FROM frontendBoard where userId =? AND boardId=?`;
+    const [[result]] = await pool.query(sql, [userId, id]);
     console.log(result["COUNT(*)"]);
 
     return result["COUNT(*)"];
@@ -142,7 +142,7 @@ exports.deleteBoard = async (boardId) => {
   try {
     const sql = `DELETE FROM frontendBoard where boardId =?`;
     const [result] = await pool.query(sql, [boardId]);
-    console.log(result);
+    // console.log(result);
     return result;
   } catch (e) {
     console.log("Repo deleteBoard err " + e.message);

@@ -6,7 +6,7 @@ const commentRouter = require("./comment/comment.route");
 
 router.get("/", (req, res) => {
   // console.log("!!!!!!");
-  console.log("indexrouter : ", req.user);
+  // console.log("indexrouter : ", req.user);
   res.render("index.html", { user: req.user });
 });
 

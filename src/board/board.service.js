@@ -55,7 +55,7 @@ exports.getViewincrement = async (boardId) => {
 exports.checkedLikes = async (boardId, userId) => {
   try {
     const result = await boardRepository.checkedLikes(boardId, userId);
-    console.log("checkedLikes", result);
+    // console.log("checkedLikes", result);
     if (!result) return;
     if (result.length == 0) return false;
     return result;
@@ -67,7 +67,7 @@ exports.checkedLikes = async (boardId, userId) => {
 exports.getCountlike = async (boardId) => {
   try {
     const result = await boardRepository.countLike(boardId);
-    console.log("getCountlike", result);
+    // console.log("getCountlike", result);
     if (!result) return;
     return result;
   } catch (e) {
@@ -138,9 +138,9 @@ exports.postmodifyBoard = async (title, content, boardId) => {
   }
 };
 
-exports.getDelete = async (boardId, id) => {
+exports.getDelete = async (id, boardId) => {
   try {
-    const isChecked = await boardRepository.userChecked(boardId, id);
+    const isChecked = await boardRepository.userChecked(id, boardId);
     // console.log(isChecked);
     if (!isChecked) throw new Error();
     const result = await boardRepository.deleteBoard(boardId);
