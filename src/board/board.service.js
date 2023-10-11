@@ -52,6 +52,29 @@ exports.getViewincrement = async (boardId) => {
   }
 };
 
+exports.checkedLikes = async (boardId, userId) => {
+  try {
+    const result = await boardRepository.checkedLikes(boardId, userId);
+    console.log("checkedLikes", result);
+    if (!result) return;
+    if (result.length == 0) return false;
+    return result;
+  } catch (e) {
+    console.log("service getLikes err", e.message);
+  }
+};
+
+exports.getCountlike = async (boardId) => {
+  try {
+    const result = await boardRepository.countLike(boardId);
+    console.log("getCountlike", result);
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("service getCountlike err", e.message);
+  }
+};
+
 // exports.getAllusernickname = async (boardId) => {
 //   try {
 //     const result = await boardRepository.findAllusernickname(boardId);
@@ -69,6 +92,26 @@ exports.getComments = async (boardId) => {
     return result;
   } catch (e) {
     console.log("service getComments err" + e.message);
+  }
+};
+
+exports.getLike = async (boardId, userId) => {
+  try {
+    const result = await boardRepository.likeIncrement(boardId, userId);
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("service getLike", e.message);
+  }
+};
+
+exports.getDeletelike = async (boardId, userId) => {
+  try {
+    const result = await boardRepository.likeDecrement(boardId, userId);
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("service getLike", e.message);
   }
 };
 
