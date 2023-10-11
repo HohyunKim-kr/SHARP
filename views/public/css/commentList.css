@@ -22,25 +22,30 @@ li {
 }
 
 .btn {
-  padding: 5px;
+  padding: 10px;
   display: flex;
-  justify-content: end;
-  gap: 20px;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: start;
+  gap: 10px;
+}
+
+h4 {
+  font-family: "Libre Baskerville", serif;
+  font-family: "Noto Serif KR", serif;
+  color: #815d0e;
   text-align: center;
 }
 .btnUser {
   position: relative;
-  border: none;
   display: inline-block;
-  background-color: rgb(246, 160, 69);
-  background: rgb(255, 214, 214);
-  padding: 15px 30px;
-  border-radius: 15px;
-  font-family: "paybooc-Light", sans-serif;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: #593d1a;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.25s;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
 }
 
 h1 a {
@@ -71,7 +76,7 @@ td a {
 }
 
 .menuPage table {
-  width: 200px;
+  padding: 90px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -86,6 +91,7 @@ td {
 }
 
 .commentbody {
+  margin-left: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,7 +104,6 @@ td {
 }
 
 .commentRoot {
-  padding-left: 400px;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -106,10 +111,10 @@ td {
 }
 
 .commentBox {
-  width: 600px;
-  height: 150px;
+  width: 800px;
+  height: 200px;
   margin: 20px;
-  border-style: solid dotted double;
+  border-bottom: 5px solid #593d1a;
 }
 
 .commentTitle {
@@ -129,5 +134,11 @@ td {
 }
 
 .commentBox li {
-  text-align: center;
+  margin: 20px;
+  text-align: start;
+}
+
+.commentBox li a {
+  font-family: "Noto Sans KR", sans-serif;
+  color: black;
 }

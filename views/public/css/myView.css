@@ -98,7 +98,7 @@ td {
 .myView {
   height: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   border-left: 2px solid black;
@@ -121,6 +121,15 @@ td {
 
 .bd2 {
   font-size: 50px;
+}
+
+.btnLike {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  border: 1px solid black;
 }
 
 span p {
