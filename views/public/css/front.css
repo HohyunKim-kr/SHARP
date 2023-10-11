@@ -29,7 +29,11 @@ h2 a {
   gap: 10px;
 }
 
-h4 {
+.userName {
+  margin: 10px;
+}
+
+.userName h4 {
   font-family: "Libre Baskerville", serif;
   font-family: "Noto Serif KR", serif;
   color: #815d0e;

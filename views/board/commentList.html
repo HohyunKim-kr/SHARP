@@ -11,11 +11,21 @@
       <div id="root">
         <div class="title">
           <h1><a href="/">SHARP</a></h1>
-          <div class="btn">
-            <button class="btnUser">{{user.userNickname}}</button>
-            <button class="btnUser">
-              <a href="/users/getuserInfo">회원정보</a>
-            </button>
+          <div class="btnInfo">
+            {% if user %}
+            <div class="userName">
+              <h4>{{user.userNickname}}님 환영합니다</h4>
+            </div>
+            <a href="/users/logout" class="btnDev">로그아웃</a>
+
+            <a href="/users/getuserInfo" class="btnDev">회원정보</a>
+
+            {% else %}
+            <a href="/users/login" class="btnDev">로그인</a>
+
+            <a href="/users/userCreate" class="btnDev">회원가입</a>
+
+            {% endif %}
           </div>
         </div>
         <div id="myBody">
@@ -57,7 +67,8 @@
                 </div>
                 <li>
                   <a href="/boards/myView?id={{row.boardId}}"
-                    >내 댓글1{{row.comment}}</a
+                    >내 댓글1
+                    fwwwfffffffffffffwfwffwfwfwwffwwf{{row.comment}}</a
                   >
                 </li>
                 <li>{{user.userNickname}}</li>
@@ -69,7 +80,7 @@
                 </div>
                 <li>
                   <a href="/boards/myView?id={{row.boardId}}"
-                    >내 댓글2{{row.comment}}</a
+                    >내 댓글2 아이우이아ㅏㄹ라라라라라랄라{{row.comment}}</a
                   >
                 </li>
                 <li>{{user.userNickname}}</li>
