@@ -54,7 +54,7 @@
                         height="3"
                       />
                       <div class="frontComment">
-                        {% for row in comment | reverse %} {% if loop.index < 10
+                        {% for row in comment | reverse %} {% if loop.index < 15
                         %}
 
                         <a
@@ -121,7 +121,7 @@
     <script>
       function getFrontComments(comments) {
         const frontComments = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 15; i++) {
           frontComments.push(comments[i]);
         }
         return frontComments;

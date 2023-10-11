@@ -38,9 +38,10 @@
             <ul class="commentRoot">
               {% for row in comment%}
               <div class="commentBox">
-                <div></div>
-                <p><a href="/">SHARP</a></p>
-                <div class="comDel"><button>삭제</button></div>
+                <div class="commentTitle">
+                  <p><a href="/">SHARP</a></p>
+                  <div class="comDel"><button>삭제</button></div>
+                </div>
                 <li>
                   <a href="/boards/myView?id={{row.boardId}}"
                     >{{row.comment}}</a
@@ -50,7 +51,10 @@
               </div>
               {% endfor %}
               <div class="commentBox">
-                <p><a href="/">SHARP</a></p>
+                <div class="commentTitle">
+                  <p><a href="/">SHARP</a></p>
+                  <div class="comDel"><button>삭제</button></div>
+                </div>
                 <li>
                   <a href="/boards/myView?id={{row.boardId}}"
                     >내 댓글1{{row.comment}}</a
@@ -59,7 +63,10 @@
                 <li>{{user.userNickname}}</li>
               </div>
               <div class="commentBox">
-                <p><a href="/">SHARP</a></p>
+                <div class="commentTitle">
+                  <p><a href="/">SHARP</a></p>
+                  <div class="comDel"><button>삭제</button></div>
+                </div>
                 <li>
                   <a href="/boards/myView?id={{row.boardId}}"
                     >내 댓글2{{row.comment}}</a
