@@ -54,18 +54,15 @@
           <div class="viewPage">
             <div class="myView">
               <div id="boardsTitle">
-                <span> <p class="boards bd1">front{{board.category}}</p></span>
-                <span> <p class="boards bd2">제목이란{{board.title}}</p></span>
+                <span> <p class="boards bd1">{{board.category}}</p></span>
+                <span> <p class="boards bd2">{{board.title}}</p></span>
                 <span>
                   <p class="boards bd3">
-                    sang{{board.writer}} | 45ss45{{board.created_at}}
+                    {{board.writer}} | {{board.created_at}}
                   </p></span
                 >
               </div>
-              <span
-                >content
-                <p class="boards bd4">fwf{{board.content}}</p></span
-              >
+              <span> <p class="boards bd4">{{board.content}}</p></span>
             </div>
           </div>
         </div>
@@ -103,20 +100,6 @@
               </button>
             </ul>
             {% endfor %}
-            <ul>
-              <li>fwqf{{row.userNickname}} :</li>
-              <li>fwffw{{row.comment}}</li>
-              <button class="itemDel">
-                <i class="fas fa-minus-circle">삭제</i>
-              </button>
-            </ul>
-            <ul>
-              <li>geg{{row.userNickname}} :</li>
-              <li>fqf{{row.comment}}</li>
-              <button class="itemDel">
-                <i class="fas fa-minus-circle">삭제</i>
-              </button>
-            </ul>
           </li>
         </ul>
       </div>
