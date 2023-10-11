@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: rgb(254, 239, 203);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+#container {
+  width: 100%;
+}
+
+.btn {
+  padding: 5px;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  text-align: center;
+}
+.btnUser {
+  position: relative;
+  border: none;
+  display: inline-block;
+  background-color: rgb(246, 160, 69);
+  background: rgb(255, 214, 214);
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+h1 a {
+  color: rgb(246, 78, 78);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btnUser a {
+  text-decoration: none;
+}
+
+.title {
+  width: 100%;
+  height: 70px;
+  /* border: 1px solid black; */
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(248, 249, 236);
+}
+
+td a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Georgia;
+  font-style: italic;
+}
+
+#myBody {
+  width: 100%;
+  height: 500px;
+  border: 0.4em inset #009688;
+  display: flex;
+  flex-direction: row;
+}
+
+.menuPage table {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid black;
+  align-items: center;
+}
+th,
+td {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.commentbody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.commentbody h1 {
+  padding: 30px;
+  color: #593d1a;
+}
+
+.commentRoot {
+  padding-left: 400px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.commentBox {
+  width: 600px;
+  height: 150px;
+  border-style: solid dotted double;
+}
+
+.commentBox p a {
+  color: rgb(246, 78, 78);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.commentBox li {
+  text-align: center;
+}

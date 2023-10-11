@@ -3,17 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css" />
+    <title>myComment</title>
+    <link rel="stylesheet" href="/css/commentList.css" />
   </head>
   <body>
-    <ul>
-      {% for row in comment%}
-      <li>
-        <a href="/boards/myView?id={{row.boardId}}">{{row.comment}}</a>
-      </li>
-      <li>{{user.userNickname}}</li>
-      {% endfor %}
-    </ul>
+    <div id="container">
+      <div id="root">
+        <div class="title">
+          <h1><a href="/">SHARP</a></h1>
+          <div class="btn">
+            <button class="btnUser">{{user.userNickname}}</button>
+            <button class="btnUser">
+              <a href="/users/getuserInfo">회원정보</a>
+            </button>
+          </div>
+        </div>
+        <div id="myBody">
+          <div class="menuPage">
+            <table>
+              <thead>
+                <tr>
+                  <th>메뉴</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/users/getuserInfo">회원정보</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="commentbody">
+            <h1>내 SHARP 댓글</h1>
+            <ul class="commentRoot">
+              {% for row in comment%}
+              <div class="commentBox">
+                <div></div>
+                <p><a href="/">SHARP</a></p>
+                <div class="comDel"><button>삭제</button></div>
+                <li>
+                  <a href="/boards/myView?id={{row.boardId}}"
+                    >{{row.comment}}</a
+                  >
+                </li>
+                <li>{{user.userNickname}}</li>
+              </div>
+              {% endfor %}
+              <div class="commentBox">
+                <p><a href="/">SHARP</a></p>
+                <li>
+                  <a href="/boards/myView?id={{row.boardId}}"
+                    >내 댓글1{{row.comment}}</a
+                  >
+                </li>
+                <li>{{user.userNickname}}</li>
+              </div>
+              <div class="commentBox">
+                <p><a href="/">SHARP</a></p>
+                <li>
+                  <a href="/boards/myView?id={{row.boardId}}"
+                    >내 댓글2{{row.comment}}</a
+                  >
+                </li>
+                <li>{{user.userNickname}}</li>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
