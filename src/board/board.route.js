@@ -15,6 +15,8 @@ router.post("/writeBoard", boardcontroller.postWriteboard);
 router.get("/commentList", boardcontroller.getCommentList);
 router.get("/myView", boardcontroller.getmyView);
 
+router.get("/like", boardcontroller.getLike);
+router.get("/deleteLike", boardcontroller.getDeletelike);
 // update
 router.get("/modify", boardcontroller.getModify);
 router.post("/modify", boardcontroller.postModify);

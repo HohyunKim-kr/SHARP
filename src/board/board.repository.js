@@ -43,11 +43,53 @@ exports.findMyview = async (boardId) => {
 
 exports.viewIncrement = async (boardId) => {
   try {
+    console.log(boardId);
     const sql = `UPDATE frontendBoard SET views=views+1 WHERE boardId = ?`;
     const [result] = await pool.query(sql, [boardId]);
     return result;
   } catch (e) {
     console.log("repo viewIncrement err", e.message);
+  }
+};
+
+exports.checkedLikes = async (boardId, userId) => {
+  try {
+    const sql = `SELECT * FROM likes where boardId=? AND userId=?`;
+    const [result] = await pool.query(sql, [boardId, userId]);
+    console.log("checkedlikes", result);
+    return result;
+  } catch (e) {
+    console.log("repo likeIncrement err", e.message);
+  }
+};
+
+exports.countLike = async (boardId) => {
+  try {
+    const sql = `SELECT COUNT(*) FROM likes where boardId=?`;
+    const [[result]] = await pool.query(sql, [boardId]);
+    return result["COUNT(*)"];
+  } catch (e) {
+    console.log("repo likeIncrement err", e.message);
+  }
+};
+
+exports.likeIncrement = async (boardId, userId) => {
+  try {
+    const sql = `INSERT INTO likes(boardId, userId) values(?,?)`;
+    const [result] = await pool.query(sql, [boardId, userId]);
+    return result;
+  } catch (e) {
+    console.log("repo likeIncrement err", e.message);
+  }
+};
+
+exports.likeDecrement = async (boardId, userId) => {
+  try {
+    const sql = `DELETE FROM likes where boardId =? AND userId=?`;
+    const [result] = await pool.query(sql, [boardId, userId]);
+    return result;
+  } catch (e) {
+    console.log("repo likeDecrement err", e.message);
   }
 };
 

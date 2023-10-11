@@ -7,6 +7,8 @@ exports.getFront = async (req, res, next) => {
     // console.log(getmyViewpage);
     const getfrontList = await boardService.getFrontendboard();
     // console.log(getfrontList);
+    // 좋아요 갯수 반환
+    // const countLike = await boardService.getCountlike(boardId);
     res.render("board/front.html", {
       data: getfrontList,
       userData: userData,
@@ -56,18 +58,47 @@ exports.getmyView = async (req, res, next) => {
     const userData = req.user;
     const getmyViewpage = await boardService.getmyView(boardId);
     const viewIncrement = await boardService.getViewincrement(boardId);
-    // const allUsernickname = await boardService.getAllusernickname(
-    //   // userData.userId
-    //   boardId
-    // );
-    // console.log(allUsernickname);
+    // 좋아요 클릭시 그에 맞는 board,id 를 찾는 구문 반환되면 좋아요
+    const likes = await boardService.checkedLikes(boardId, userData.userId);
+    console.log(likes);
+    // 좋아요 갯수 반환
+    const countLike = await boardService.getCountlike(boardId);
+    // const likeIncrement = await boardService.getLikeincrement(boardId);
+    console.log(countLike);
     const getCommentsList = await boardService.getComments(boardId);
     res.render("board/myView.html", {
       comments: getCommentsList,
       board: getmyViewpage,
       user: userData,
+      like: likes,
+      countLike: countLike,
       // allNick: allUsernickname,
     });
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.getLike = async (req, res, next) => {
+  try {
+    const boardId = req.query.id;
+    const user = req.user;
+    const getLike = await boardService.getLike(boardId, user.userId);
+    res.redirect(`/boards/myView?id=${boardId}`);
+  } catch (e) {
+    next(e);
+  }
+};
+
+exports.getDeletelike = async (req, res, next) => {
+  try {
+    const boardId = req.query.id;
+    const user = req.user;
+    const getDeletelike = await boardService.getDeletelike(
+      boardId,
+      user.userId
+    );
+    res.redirect(`/boards/myView?id=${boardId}`);
   } catch (e) {
     next(e);
   }
