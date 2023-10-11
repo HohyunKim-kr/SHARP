@@ -3,6 +3,16 @@
   margin: 0;
 }
 
+li {
+  list-style: none;
+  padding-left: 0px;
+}
+
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -11,8 +21,6 @@ body {
 }
 h2 a {
   color: rgb(229, 42, 42);
-  text-transform: uppercase;
-  text-decoration: none;
 }
 
 .btnDev {
@@ -93,12 +101,6 @@ h4 {
   background: rgb(238, 239, 205);
 }
 
-.comment button {
-  display: flex;
-  justify-content: flex-end;
-  align-items: end;
-}
-
 #pageInfo {
   padding-top: 130px;
   display: flex;
@@ -128,13 +130,6 @@ h4 {
   text-align: center;
 }
 
-.whatsFront img {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
 .comment {
   display: flex;
   flex-direction: column;
@@ -144,16 +139,15 @@ h4 {
   margin: 0 auto;
 }
 
-.ball {
+.ball .frontComment {
   display: flex;
-  justify-content: flex-start;
-  padding: 10px 15px;
-  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: start;
 }
 
-.ball a {
-  text-transform: uppercase;
-  text-decoration: none;
+.pointImg {
+  margin-top: 10px;
 }
 
 table.type09 {
@@ -203,4 +197,8 @@ a.button {
   background: #00ae68;
   box-shadow: 0px 5px 0px 0px #007144;
   text-decoration: none;
+}
+
+.cyan_mini {
+  display: inline-block;
 }

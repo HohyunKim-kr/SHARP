@@ -47,15 +47,27 @@
                 >
                   <li>
                     <div class="ball">
-                      <img
-                        src="https://ssl.pstatic.net/static/cafe/cafe_pc/ico-blank.png"
-                        alt="tcol-c"
-                        width="3"
-                        height="3"
-                      />
-                      <a href="" class="tcol-c tlink" onclick="targetCleaner()">
-                        <div class="ellipsis tcol-c">댓글 1</div></a
-                      >
+                      <div class="frontComment">
+                        {% for row in comment | reverse %} {% if loop.index < 10
+                        %}
+                        <img
+                          src="https://ssl.pstatic.net/static/cafe/cafe_pc/ico-blank.png"
+                          alt="tcol-c"
+                          width="3"
+                          height="3"
+                          class="pointImg"
+                        />
+                        <a
+                          href="/boards/myView?id={{row.boardId}}"
+                          class="tcol-c tlink"
+                        >
+                          <div class="ellipsis tcol-c">
+                            <marquee scrollamount="5"> {{row.comment}}</marquee>
+                          </div>
+                        </a>
+
+                        {% endif %} {% endfor %}
+                      </div>
                     </div>
                   </li>
                 </ul>

@@ -8,6 +8,11 @@ li {
   padding-left: 0px;
 }
 
+a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -16,8 +21,6 @@ body {
 }
 h2 a {
   color: rgb(229, 42, 42);
-  text-transform: uppercase;
-  text-decoration: none;
 }
 
 .btn {
@@ -149,33 +152,32 @@ h2 a {
   text-align: center;
 }
 
-.whatsFront img {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
 .comment {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   padding-top: 80px;
-  width: 100%px;
+  width: 100px;
   margin: 0 auto;
 }
 
-.ball {
+.ball .frontComment {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: start;
+}
+
+.pointImg {
+  margin-top: 10px;
+}
+
+/* .ball {
   display: flex;
   justify-content: flex-start;
   padding: 10px 15px;
   align-items: center;
-}
-
-.ball a {
-  text-transform: uppercase;
-  text-decoration: none;
-}
+} */
 
 table.type09 {
   border-collapse: collapse;
@@ -209,7 +211,6 @@ table.type09 td {
 }
 
 tr a {
-  text-decoration: none;
   text-align: center;
 }
 
@@ -242,12 +243,4 @@ a.button {
 
 .cyan_mini {
   display: inline-block;
-}
-
-.frontComment {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
 }

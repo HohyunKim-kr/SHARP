@@ -84,7 +84,7 @@ li {
 }
 .slideshow-image {
   border-radius: 3%;
-  width: 100%;
+  width: 1200px;
   height: 100%;
   overflow: hidden;
 }
@@ -133,12 +133,13 @@ li {
 .btnEx .txt {
   width: 300px;
   padding: 10px 20px;
-  background-color: #444444;
+  background: linear-gradient(to left, rgb(243, 249, 238), rgb(215, 248, 188));
   border-radius: 5px;
-  color: #ffffff;
+  color: #1f0e0e;
   position: absolute;
   opacity: 0;
   transition: all ease 0.5s;
+  font-family: "Nanum Myeonjo" !important;
 }
 
 .btnEx:hover .txt {
