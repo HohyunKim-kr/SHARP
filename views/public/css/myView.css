@@ -7,6 +7,11 @@ body {
   background: rgb(248, 249, 236);
 }
 
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 #container {
   width: 100%;
 }
@@ -45,8 +50,6 @@ body {
 
 h1 a {
   color: rgb(246, 78, 78);
-  text-transform: uppercase;
-  text-decoration: none;
 }
 
 .title {
@@ -61,8 +64,6 @@ h1 a {
 }
 
 td a {
-  text-transform: uppercase;
-  text-decoration: none;
   font-family: Georgia;
   font-style: italic;
 }
@@ -105,11 +106,15 @@ td {
 }
 
 #boardsTitle {
-  width: 800px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   border-bottom: 1px solid rgb(101, 96, 96);
+}
+
+#boardsTitle .boards {
+  margin: 10px;
 }
 
 .bd1 {
@@ -120,7 +125,12 @@ td {
 }
 
 .bd2 {
-  font-size: 50px;
+  font-size: 70px;
+}
+
+.bd4 {
+  margin-bottom: 20px;
+  height: 100%;
 }
 
 .btnLike {
@@ -139,7 +149,7 @@ span p {
 #rootComment {
   padding-left: 200px;
   margin: 0 auto;
-  width: 1000px;
+  width: 100%;
 }
 
 .comment {
@@ -241,20 +251,36 @@ li {
 }
 
 #commentList {
-  padding: 5px;
+  margin: 10px;
   box-sizing: border-box;
   border: 2px solid #a49696;
   background-color: #fff;
   width: 80%;
-  height: 400px;
+  height: 150px;
 }
-#commentList ul {
+#commentList .userNick {
+  box-sizing: border-box;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-start;
+  /* align-items: center; */
   border-bottom: 1px solid rgb(52, 48, 48);
+}
+
+#commentList .userNick li {
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.commentBody {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .itemDel {
@@ -267,9 +293,4 @@ li {
 .itemDel:hover {
   color: red;
   cursor: pointer;
-}
-
-.itemDel i {
-  position: relative;
-  left: 100px;
 }
