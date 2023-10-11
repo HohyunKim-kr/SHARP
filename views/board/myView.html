@@ -62,7 +62,7 @@
                   </p></span
                 >
               </div>
-              <span> <p class="boards bd4">{{board.content}}</p></span>
+              <span> <p class="boards bd4">sccssc{{board.content}}</p></span>
               <div class="btnLike">
                 {% if like %}
                 <a
@@ -142,23 +142,29 @@
               </span>
             </form>
           </li>
+          <br />
+          <br />
+
+          {% for row in comments %}
           <li id="commentList">
-            {% for row in comments %}
             <ul>
-              <li>{{row.commentId}}</li>
-              <li>{{row.userNickname}}</li>
-              <li>{{row.comment}}</li>
-              <button class="itemDel">
-                <i class="fas fa-minus-circle">
-                  <a
-                    href="/comments/deleteComments?id={{board.boardId}}&commentId={{row.commentId}}"
-                    >삭제</a
-                  ></i
-                >
-              </button>
+              <div class="userNick">
+                <li>{{row.commentId}}({{row.userNickname}})</li>
+              </div>
+              <div class="commentBody">
+                <li>{{row.comment}}</li>
+                <button class="itemDel">
+                  <i class="fas fa-minus-circle">
+                    <a
+                      href="/comments/deleteComments?id={{board.boardId}}&commentId={{row.commentId}}"
+                      >삭제</a
+                    ></i
+                  >
+                </button>
+              </div>
             </ul>
-            {% endfor %}
           </li>
+          {% endfor %}
         </ul>
       </div>
     </div>

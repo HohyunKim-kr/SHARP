@@ -2,7 +2,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background: rgb(254, 239, 203);
+  background: rgb(243, 249, 238);
 }
 
 header .title {
@@ -59,13 +59,6 @@ h4 {
   text-align: center;
 }
 
-.btnList {
-  padding: 200px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .intro {
   display: flex;
   flex-direction: column;
@@ -117,6 +110,12 @@ li {
   animation-duration: 1.5s;
 }
 
+.btnList {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+
 .btnDev {
   position: relative;
   display: inline-block;
@@ -131,11 +130,17 @@ li {
   margin-right: 50px;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+.btnEx .txt {
+  width: 300px;
+  padding: 10px 20px;
+  background-color: #444444;
+  border-radius: 5px;
+  color: #ffffff;
+  position: absolute;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.btnEx:hover .txt {
+  opacity: 1;
 }
