@@ -66,9 +66,28 @@
         <div id="roadMap">
           <img src="/img/백엔드로드맵.png" alt="" />
         </div>
-        <div class="whatsFront">
-          <img src="/img/백엔드란.png" alt="" />
-        </div>
+        <span class="slideshow-container">
+          <div class="Slidesbackground">
+            <div class="mySlides fade">
+              <img src="/img/프론트엔드 광고1.jpg" class="slideshow-image" />
+            </div>
+            <div class="mySlides fade">
+              <img src="/img/프론트엔드 광고2.jpg" class="slideshow-image" />
+            </div>
+            <div class="mySlides fade">
+              <img src="/img/프론트엔드 광고3.jpg" class="slideshow-image" />
+            </div>
+            <div class="mySlides fade">
+              <img src="/img/프론트엔드 광고4.jpg" class="slideshow-image" />
+            </div>
+            <div class="mySlides fade">
+              <img src="/img/프론트엔드 광고5.jpg" class="slideshow-image" />
+            </div>
+            <div class="mySlides fade">
+              <img src="/img/프론트엔드 광고6.jpg" class="slideshow-image" />
+            </div>
+          </div>
+        </span>
       </div>
       <div class="commentTable">
         <div class="myTable">
@@ -112,5 +131,25 @@
         </div>
       </div>
     </div>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+
+        setTimeout(showSlides, 3000);
+      }
+    </script>
   </body>
 </html>
