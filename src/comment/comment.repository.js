@@ -10,3 +10,14 @@ exports.createComment = async (comment, userId, boardId) => {
     console.log("comment repo err " + e.message);
   }
 };
+
+exports.deleteComment = async (userId, comment) => {
+  try {
+    const sql = `DELETE FROM commentsList where userId=? AND commentId=?`;
+    const [result] = await pool.query(sql, [userId, comment]);
+    console.log(result);
+    return result;
+  } catch (e) {
+    console.log("repo commentdelte err", e.message);
+  }
+};

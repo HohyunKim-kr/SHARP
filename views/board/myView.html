@@ -93,10 +93,16 @@
           <li id="commentList">
             {% for row in comments %}
             <ul>
+              <li>{{row.commentId}}</li>
               <li>{{row.userNickname}}</li>
               <li>{{row.comment}}</li>
               <button class="itemDel">
-                <i class="fas fa-minus-circle">삭제</i>
+                <i class="fas fa-minus-circle">
+                  <a
+                    href="/comments/deleteComments?id={{board.boardId}}&commentId={{row.commentId}}"
+                    >삭제</a
+                  ></i
+                >
               </button>
             </ul>
             {% endfor %}

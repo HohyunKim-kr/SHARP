@@ -18,3 +18,22 @@ exports.postCreatecomments = async (req, res, next) => {
     next(e);
   }
 };
+
+exports.getDeletecomments = async (req, res, next) => {
+  try {
+    const user = req.user;
+    const boardId = req.query.id;
+
+    if (user == undefined) {
+      throw new Error();
+    }
+    const { commentId } = req.query;
+
+    const deleteComments = await commentService.getDeletecomments(
+      user.userId,
+      commentId
+    );
+    console.log(deleteComments);
+    res.redirect(`/boards/myView?id=${boardId}`);
+  } catch (e) {}
+};

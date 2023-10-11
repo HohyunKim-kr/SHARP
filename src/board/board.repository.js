@@ -54,7 +54,7 @@ exports.findMyview = async (boardId) => {
 
 exports.findcommentsList = async (boardId) => {
   try {
-    const sql = `SELECT userNickname, comment FROM commentsList JOIN users ON commentsList.userId = users.userId where boardId=?`;
+    const sql = `SELECT commentId, userNickname, comment FROM commentsList JOIN users ON commentsList.userId = users.userId where boardId=?`;
     const [result] = await pool.query(sql, [boardId]);
     // console.log("결과!! : ", result);
     return result;

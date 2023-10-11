@@ -12,6 +12,6 @@ router.post("/myView", commentController.postCreatecomments);
 // router.post("/myView", commentController.postModifycomments);
 
 // comments delete
-// router.get("/deleteComments", commentController.getDeletecomments);
+router.get("/deleteComments", commentController.getDeletecomments);
 
 module.exports = router;

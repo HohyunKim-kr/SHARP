@@ -13,3 +13,13 @@ exports.postCreatecomments = async (comment, userId, boardId) => {
     console.log("commentservice err" + e.message);
   }
 };
+
+exports.getDeletecomments = async (userId, comment) => {
+  try {
+    const result = await commentRepository.deleteComment(userId, comment);
+    if (!result) return;
+    return;
+  } catch (e) {
+    console.log("service deletecomment err", e.message);
+  }
+};
