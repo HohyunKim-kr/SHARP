@@ -51,7 +51,7 @@ exports.myCommentList = async (userId) => {
   try {
     const sql = `SELECT comment,userId,boardId FROM commentsList where userId=?`;
     const [result] = await pool.query(sql, [userId]);
-    console.log(result);
+    // console.log(result);
     return result;
   } catch (e) {
     console.log("usermycommentlist err", e.message);

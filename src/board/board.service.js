@@ -66,7 +66,7 @@ exports.getModify = async (userId, id) => {
   try {
     const result = await boardRepository.userChecked(userId, id);
     if (!result) throw new Error();
-    console.log("userchecked" + result);
+    // console.log("userchecked" + result);
     return result;
   } catch (e) {
     throw new Error("service getmodify" + e.message);
@@ -88,7 +88,7 @@ exports.postmodifyBoard = async (title, content, boardId) => {
 exports.getDelete = async (boardId, id) => {
   try {
     const isChecked = await boardRepository.userChecked(boardId, id);
-    console.log(isChecked);
+    // console.log(isChecked);
     if (!isChecked) throw new Error();
     const result = await boardRepository.deleteBoard(boardId);
     if (!result) return;

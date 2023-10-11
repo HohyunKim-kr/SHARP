@@ -56,18 +56,18 @@ exports.findcommentsList = async (boardId) => {
   try {
     const sql = `SELECT userNickname, comment FROM commentsList JOIN users ON commentsList.userId = users.userId where boardId=?`;
     const [result] = await pool.query(sql, [boardId]);
-    console.log("결과!! : ", result);
+    // console.log("결과!! : ", result);
     return result;
   } catch (e) {
     console.log("repo findComment err" + e.message);
   }
 };
 
-exports.userChecked = async (userId, id) => {
+exports.userChecked = async (id, userId) => {
   try {
     // console.log(userId, id);
-    const sql = `SELECT COUNT(*) FROM frontendBoard where userId =? AND boardId=?`;
-    const [[result]] = await pool.query(sql, [userId, id]);
+    const sql = `SELECT COUNT(*) FROM frontendBoard where boardId=? AND userId =?`;
+    const [[result]] = await pool.query(sql, [id, userId]);
     console.log(result["COUNT(*)"]);
 
     return result["COUNT(*)"];
@@ -90,6 +90,7 @@ exports.deleteBoard = async (boardId) => {
   try {
     const sql = `DELETE FROM frontendBoard where boardId =?`;
     const [result] = await pool.query(sql, [boardId]);
+    console.log(result);
     return result;
   } catch (e) {
     console.log("Repo deleteBoard err " + e.message);

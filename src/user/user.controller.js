@@ -11,7 +11,7 @@ exports.postLogin = async (req, res, next) => {
     // const userPassword = req.body.userPassword;
 
     const result = await userService.postLogin(userEmail, userPassword);
-    console.log(result);
+    // console.log(result);
     if (!result.isLogin) return res.redirect("/");
 
     res.cookie(
@@ -61,7 +61,7 @@ exports.getCommentList = async (req, res, next) => {
   try {
     const user = req.user;
     const getCommentList = await userService.getCommentList(user.userId);
-    console.log(getCommentList);
+    // console.log(getCommentList);
     res.render("board/commentList.html", {
       user: req.user,
       comment: getCommentList,

@@ -8,7 +8,7 @@ exports.postLogin = async (userEmail, userPassword) => {
       userEmail,
       userPassword
     );
-    console.log(result);
+    // console.log(result);
     if (!result) return { isLogin: false, data: null };
 
     const token = jwt.sign({ Email: result.userEmail, id: result.userId });

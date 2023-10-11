@@ -4,7 +4,7 @@ exports.getFront = async (req, res, next) => {
   try {
     const userData = req.user;
     const getmyViewpage = await boardService.getCommentList();
-    console.log(getmyViewpage);
+    // console.log(getmyViewpage);
     const getfrontList = await boardService.getFrontendboard();
     // console.log(getfrontList);
     res.render("board/front.html", {
@@ -109,6 +109,8 @@ exports.getDelete = async (req, res, next) => {
       throw new Error();
     }
     const boardId = req.query.id;
+    console.log(boardId);
+    console.log(user.userId);
     const deleteBoard = await boardService.getDelete(boardId, user.userId);
     res.redirect("/boards/front");
   } catch (e) {
