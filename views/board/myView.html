@@ -54,15 +54,15 @@
           <div class="viewPage">
             <div class="myView">
               <div id="boardsTitle">
-                <span> <p class="boards bd1">{{board.category}}</p></span>
-                <span> <p class="boards bd2">{{board.title}}</p></span>
+                <span> <p class="boards bd1">fw{{board.category}}</p></span>
+                <span> <p class="boards bd2">fw{{board.title}}</p></span>
                 <span>
                   <p class="boards bd3">
-                    {{board.writer}} | {{board.created_at}}
+                    fw{{board.writer}} | fw{{board.created_at}}
                   </p></span
                 >
               </div>
-              <span> <p class="boards bd4">{{board.content}}</p></span>
+              <span> <p class="boards bd4">sccssc{{board.content}}</p></span>
               <div class="btnLike">
                 <a href="" data-type="like" aria-pressed="false">
                   <!-- 빈하트 -->
@@ -123,23 +123,27 @@
               </span>
             </form>
           </li>
+
+          {% for row in comments %}
           <li id="commentList">
-            {% for row in comments %}
             <ul>
-              <li>{{row.commentId}}</li>
-              <li>{{row.userNickname}}</li>
-              <li>{{row.comment}}</li>
-              <button class="itemDel">
-                <i class="fas fa-minus-circle">
-                  <a
-                    href="/comments/deleteComments?id={{board.boardId}}&commentId={{row.commentId}}"
-                    >삭제</a
-                  ></i
-                >
-              </button>
+              <div class="userNick">
+                <li>{{row.commentId}}({{row.userNickname}})</li>
+              </div>
+              <div class="commentBody">
+                <li>{{row.comment}}</li>
+                <button class="itemDel">
+                  <i class="fas fa-minus-circle">
+                    <a
+                      href="/comments/deleteComments?id={{board.boardId}}&commentId={{row.commentId}}"
+                      >삭제</a
+                    ></i
+                  >
+                </button>
+              </div>
             </ul>
-            {% endfor %}
           </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
