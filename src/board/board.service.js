@@ -42,6 +42,16 @@ exports.getmyView = async (userId) => {
   }
 };
 
+exports.getViewincrement = async (boardId) => {
+  try {
+    const result = await boardRepository.viewIncrement(boardId);
+    if (!result) return;
+    return result;
+  } catch (e) {
+    console.log("service getviewinrement err", e.message);
+  }
+};
+
 // exports.getAllusernickname = async (boardId) => {
 //   try {
 //     const result = await boardRepository.findAllusernickname(boardId);

@@ -41,6 +41,16 @@ exports.findMyview = async (boardId) => {
   }
 };
 
+exports.viewIncrement = async (boardId) => {
+  try {
+    const sql = `UPDATE frontendBoard SET views=views+1 WHERE boardId = ?`;
+    const [result] = await pool.query(sql, [boardId]);
+    return result;
+  } catch (e) {
+    console.log("repo viewIncrement err", e.message);
+  }
+};
+
 // exports.findAllusernickname = async (boardId) => {
 //   try {
 //     const sql = `SELECT userNickname FROM users where boardId=?`;

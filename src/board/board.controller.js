@@ -55,6 +55,7 @@ exports.getmyView = async (req, res, next) => {
     const boardId = req.query.id;
     const userData = req.user;
     const getmyViewpage = await boardService.getmyView(boardId);
+    const viewIncrement = await boardService.getViewincrement(boardId);
     // const allUsernickname = await boardService.getAllusernickname(
     //   // userData.userId
     //   boardId
