@@ -100,10 +100,6 @@ h2 a {
   z-index: 1;
 }
 
-.pointImg:hover .marquee {
-  transition: marquee-scrollamount 5;
-}
-
 #pageTitle .title_1 {
   width: 200px;
   height: 20px;
