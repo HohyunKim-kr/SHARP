@@ -48,7 +48,7 @@
                   <li>
                     <div class="ball">
                       <div class="frontComment">
-                        {% for row in comment | reverse %} {% if loop.index < 10
+                        {% for row in comment | reverse %} {% if loop.index < 15
                         %}
                         <img
                           src="https://ssl.pstatic.net/static/cafe/cafe_pc/ico-blank.png"
@@ -61,46 +61,10 @@
                           href="/boards/myView?id={{row.boardId}}"
                           class="tcol-c tlink"
                         >
-                          <div class="ellipsis tcol-c">
-                            <marquee scrollamount="5"> {{row.comment}}</marquee>
-                          </div>
+                          <div class="ellipsis tcol-c">{{row.comment}}</div>
                         </a>
 
                         {% endif %} {% endfor %}
-                        <img
-                          src="https://ssl.pstatic.net/static/cafe/cafe_pc/ico-blank.png"
-                          alt="tcol-c"
-                          width="3"
-                          height="3"
-                          class="pointImg"
-                        />
-                        <a
-                          href="/boards/myView?id={{row.boardId}}"
-                          class="tcol-c tlink"
-                        >
-                          <div class="ellipsis tcol-c">
-                            <marquee scrollamount="5">
-                              22ffffffffffffffff{{row.comment}}</marquee
-                            >
-                          </div>
-                        </a>
-                        <img
-                          src="https://ssl.pstatic.net/static/cafe/cafe_pc/ico-blank.png"
-                          alt="tcol-c"
-                          width="3"
-                          height="3"
-                          class="pointImg"
-                        />
-                        <a
-                          href="/boards/myView?id={{row.boardId}}"
-                          class="tcol-c tlink"
-                        >
-                          <div class="ellipsis tcol-c">
-                            <marquee scrollamount="5">
-                              111 wwwwwwwwwwwwwwwwwwwww{{row.comment}}</marquee
-                            >
-                          </div>
-                        </a>
                       </div>
                     </div>
                   </li>
@@ -177,7 +141,7 @@
     <script>
       function getFrontComments(comments) {
         const frontComments = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 15; i++) {
           frontComments.push(comments[i]);
         }
         return frontComments;
